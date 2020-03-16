@@ -1,2 +1,2 @@
 # POC-intake
-Prof of concept forum for the Government of Canada
+Proof of concept forum for the Government of Canada
