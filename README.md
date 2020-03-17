@@ -1,5 +1,8 @@
 # POC-intake
 
+	
+# BRM needs a website to promote the PoC(proof of concept) process and to allow clients to submit PoC requests.  This would be a quick product delivery similar to the DTS website.  A partnership between BPMO, BRM, DTS and IT Strategy
+
 > 
 
 ## Build Setup
