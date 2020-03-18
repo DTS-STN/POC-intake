@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">Welcome Page</h1>
-      <nuxt-link to="/success" class="button--green">Form Page</nuxt-link>
+      <nuxt-link to="/form" class="button--green">Form Page</nuxt-link>
 
       <h2 class="subtitle"></h2>
     </div>
