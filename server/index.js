@@ -1,33 +1,54 @@
-const express = require('express')
-const consola = require('consola')
-const { Nuxt, Builder } = require('nuxt')
-const app = express()
+const express = require("express");
+const consola = require("consola");
+const { Nuxt, Builder } = require("nuxt");
+const app = express();
+
+const morgan = require("morgan");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const dbConfig = require("../config/db");
 
 // Import and Set Nuxt.js options
-const config = require('../nuxt.config.js')
-config.dev = process.env.NODE_ENV !== 'production'
+const config = require("../nuxt.config.js");
+config.dev = process.env.NODE_ENV !== "production";
 
-async function start () {
+mongoose.set("useCreateIndex", true);
+mongoose
+  .connect(dbConfig.database, { useNewUrlParser: true })
+  .then(() => {
+    console.log("Database is connected");
+  })
+  .catch(err => {
+    console.log({ database_error: err });
+  });
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+config.dev ? app.use(morgan("dev")) : app.use(morgan("production"))
+
+async function start() {
   // Init Nuxt.js
-  const nuxt = new Nuxt(config)
+  const nuxt = new Nuxt(config);
 
-  const { host, port } = nuxt.options.server
+  const { host, port } = nuxt.options.server;
 
-  await nuxt.ready()
+  await nuxt.ready();
   // Build only in dev mode
   if (config.dev) {
-    const builder = new Builder(nuxt)
-    await builder.build()
+    const builder = new Builder(nuxt);
+    await builder.build();
   }
 
   // Give nuxt middleware to express
-  app.use(nuxt.render)
+  app.use(nuxt.render);
 
   // Listen the server
-  app.listen(port, host)
+  app.listen(port, host);
   consola.ready({
     message: `Server listening on http://${host}:${port}`,
     badge: true
-  })
+  });
 }
-start()
+start();
