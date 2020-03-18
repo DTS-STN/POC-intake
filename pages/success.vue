@@ -2,10 +2,18 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">Welcome Page</h1>
-      <nuxt-link to="/success" class="button--green">Form Page</nuxt-link>
+      <h1 class="title">Success Page</h1>
 
       <h2 class="subtitle"></h2>
+      <div class="content">
+        <form name="contact" action method="post">
+          <label class="form-label" for="name">Name:</label>
+          <input class="form-field" name="name" id="name" />
+          <label class="form-label" for="email">Email:</label>
+          <input class="form-field" name="email" id="email" />
+          <input class="form-button" type="submit" value="Submit" />
+        </form>
+      </div>
     </div>
   </div>
 </template>
