@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const consola = require("consola");
 const { Nuxt, Builder } = require("nuxt");
@@ -7,7 +8,6 @@ const morgan = require("morgan");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const dbConfig = require("../config/db");
 
 // Import and Set Nuxt.js options
 const config = require("../nuxt.config.js");
@@ -15,7 +15,7 @@ config.dev = process.env.NODE_ENV !== "production";
 
 mongoose.set("useCreateIndex", true);
 mongoose
-  .connect(dbConfig.database, { useNewUrlParser: true })
+  .connect(process.env.CONNECTION_STRING, { useNewUrlParser: true })
   .then(() => {
     console.log("Database is connected");
   })
