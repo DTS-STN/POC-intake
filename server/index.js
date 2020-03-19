@@ -13,21 +13,6 @@ const mongoose = require("mongoose");
 const config = require("../nuxt.config.js");
 config.dev = process.env.NODE_ENV !== "production";
 
-mongoose.set("useCreateIndex", true);
-mongoose
-  .connect(process.env.CONNECTION_STRING, { useNewUrlParser: true })
-  .then(() => {
-    console.log("Database is connected");
-  })
-  .catch(err => {
-    console.log({ database_error: err });
-  });
-
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-config.dev ? app.use(morgan("dev")) : app.use(morgan("production"))
-
 async function start() {
   // Init Nuxt.js
   const nuxt = new Nuxt(config);
@@ -51,4 +36,22 @@ async function start() {
     badge: true
   });
 }
-start();
+
+function connectDb() {
+  mongoose.set("useCreateIndex", true);
+   mongoose
+    .connect(process.env.CONNECTION_STRING, { useNewUrlParser: true , useUnifiedTopology: true})
+    .then(() => {
+      console.log("Database is connected");
+    })
+    .catch(err => {
+      console.log({ database_error: err });
+    });
+
+  app.use(cors());
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.json());
+  config.dev ? app.use(morgan("dev")) : app.use(morgan("production"));
+}
+
+start().then(() => connectDb())
