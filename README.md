@@ -22,4 +22,20 @@ $ npm run start
 $ npm run generate
 ```
 
+## Setup DB Locally
+
+Note you must have mongodb installed on your system
+
+```bash
+# create required data directory
+mkdir data
+mkdir data/db
+
+# Initialize DB
+mongod --dbpath ./data/db
+
+# Run Nuxt application
+npm run dev
+```
+
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
