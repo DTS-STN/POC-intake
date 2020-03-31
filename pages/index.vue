@@ -2,9 +2,9 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">Welcome Page</h1>
-      <nuxt-link to="/form" class="button--green">Form Page</nuxt-link>
-
+      <h1 class="title">{{ $t('welcome') }}</h1>
+      <h1>{{ $t('hello') }}</h1>
+      <nuxt-link to="/en/form" class="button--green">Form Page</nuxt-link>
       <h2 class="subtitle"></h2>
     </div>
   </div>
