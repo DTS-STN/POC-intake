@@ -33,7 +33,7 @@
     "jest": "24.9.0",
     "nodemon": "1.19.4",
     "vue-jest": "4.0.0-beta.2",
-    "cypress": "^4.3.0"
+    "cypress": "^4.3.0",
     "husky": "^4.2.3"
   },
   "husky": {
