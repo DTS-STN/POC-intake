@@ -3,8 +3,20 @@
     <div>
       <logo />
       <h1 class="title">{{ $t('welcome') }}</h1>
-      <h1>{{ $t('hello') }}</h1>
-      <nuxt-link to="/en/form" class="button--green">Form Page</nuxt-link>
+
+      <div class="w-full max-w-2xl mx-auto">
+        <p class="mb-8 text-gray-500 leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor
+          sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc.
+        </p>
+        <div></div>
+      </div>
+
+      <nuxt-link
+        to="/en/form"
+        class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-500 hover:bg-indigo-600 rounded shadow"
+      >{{ $t('getstarted') }}</nuxt-link>
       <h2 class="subtitle"></h2>
     </div>
   </div>
