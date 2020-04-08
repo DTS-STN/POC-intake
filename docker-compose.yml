@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+
+  poc-intake:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        CONNECTION_STRING: ${CONNECTION_STRING}
+    container_name: poc-intake
+    restart: always
+    ports:
+     - "80:3000"
+
+  e2e:
+    build:
+      context: ./
+      dockerfile: Cypress.Dockerfile
+    container_name: cypress
+    depends_on:
+      - poc-intake
+    environment:
+      - CYPRESS_baseUrl=http://localhost
+    restart: always
+    network_mode: 'host'
+    volumes:
+      - "./cypress/reports:/cypress/report"
