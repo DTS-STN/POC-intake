@@ -3,8 +3,14 @@
 export default {
     hello: 'Hello World',
     welcome: 'Welcome Page',
-    pages: {
-        home: 'Home',
-        contacts: 'Contacts'
+    getstarted: 'Get Started',
+    form: {
+        successpage: 'Success Page',
+        firstname: 'FIRST NAME',
+        lastname: 'LAST NAME',
+        email: 'EMAIL',
+        message: 'MESSAGE',
+        send: 'Send',
+        fill: 'Please fill out this field.'
     },
 }
