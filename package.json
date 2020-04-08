@@ -25,12 +25,18 @@
     "nuxt-i18n": "6.7.2"
   },
   "devDependencies": {
-    "@nuxtjs/dotenv": "1.4.1",
-    "@nuxtjs/tailwindcss": "1.4.0",
-    "@vue/test-utils": "1.0.0-beta.32",
-    "babel-jest": "24.9.0",
-    "jest": "24.9.0",
-    "nodemon": "1.19.4",
-    "vue-jest": "4.0.0-beta.2"
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/tailwindcss": "^1.0.0",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-jest": "^24.1.0",
+    "husky": "^4.2.3",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.9",
+    "vue-jest": "^4.0.0-0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
   }
 }
