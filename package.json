@@ -14,7 +14,7 @@
     "cy-open": "cypress open"
   },
   "dependencies": {
-    "@nuxtjs/auth": "4.9.0",
+    "@nuxtjs/auth": "4.9.1",
     "@nuxtjs/axios": "5.9.7",
     "body-parser": "1.19.0",
     "cors": "2.8.5",
