@@ -43,10 +43,15 @@ async function start() {
   });
 }
 
+
+var db=process.env.VUE_APP_CONNECTION_STRING.replace('-password-', process.env.VUE_APP_POC_INTAKE_DB_PASSWORD);
+console.log(db);
+
+
 function connectDb() {
   mongoose.set("useCreateIndex", true);
   mongoose
-    .connect(process.env.VUE_APP_CONNECTION_STRING.replace('-password-', process.env.VUE_APP_POC_INTAKE_DB_PASSWORD), {
+    .connect(db, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
