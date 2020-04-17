@@ -46,7 +46,7 @@ async function start() {
 function connectDb() {
   mongoose.set("useCreateIndex", true);
   mongoose
-    .connect(process.env.CONNECTION_STRING.replace('-password-', process.env.POC_INTAKE_DB_PASSWORD), {
+    .connect(process.env.VUE_APP_CONNECTION_STRING.replace('-password-', process.env.VUE_APP_POC_INTAKE_DB_PASSWORD), {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
