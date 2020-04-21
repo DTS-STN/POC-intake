@@ -6,74 +6,87 @@
 
       <h2 class="subtitle"></h2>
       <div class="content">
-        <form class="w-full max-w-lg">
-          <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-              <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-first-name"
-              >{{ $t('form.firstname') }}</label>
-              <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="grid-first-name"
-                type="text"
-                placeholder="Jane"
-              />
-              <p class="text-red-500 text-xs italic">{{ $t('form.fill') }}</p>
-            </div>
-            <div class="w-full md:w-1/2 px-3">
-              <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-last-name"
-              >{{ $t('form.lastname') }}</label>
-              <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-last-name"
-                type="text"
-                placeholder="Doe"
-              />
-            </div>
-          </div>
-          <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full px-3">
-              <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-password"
-              >{{ $t('form.email') }}</label>
-              <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="email"
-                type="email"
-              />
-              <p class="text-gray-600 text-xs italic">Some tips - as long as needed</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full px-3">
-              <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-password"
-              >{{ $t('form.message') }}</label>
-              <textarea
-                class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
-                id="message"
-              ></textarea>
-              <!-- <p
-                class="text-gray-600 text-xs italic"
-              >Re-size can be disabled by set by resize-none / resize-y / resize-x / resize</p>-->
-            </div>
-          </div>
-          <div class="md:flex md:items-center">
-            <div class="md:w-1/3">
-              <button
-                class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                type="button"
-              >{{ $t('form.send') }}</button>
+        <ValidationObserver v-slot="{ handleSubmit }">
+          <form @submit.prevent="handleSubmit(onSubmit)">
+            <div class="flex flex-wrap -mx-3 mb-6">
+              <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label
+                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-first-name"
+                >{{ $t('form.firstname') }}</label>
+                <ValidationProvider tag="div" rules="fname" name="firstName" v-slot="{ errors }">
+                  <input
+                    name="fname"
+                    v-model="fname"
+                    type="text"
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  />
+                  <span>{{ errors[0] }}</span>
+                </ValidationProvider>
+              </div>
+              <div class="w-full md:w-1/2 px-3">
+                <label
+                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-last-name"
+                >{{ $t('form.lastname') }}</label>
+                <ValidationProvider tag="div" rules="lname" name="lastName" v-slot="{ errors }">
+                  <input
+                    name="lname"
+                    v-model="lname"
+                    type="text"
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  />
+                  <span>{{ errors[0] }}</span>
+                </ValidationProvider>
+              </div>
             </div>
 
-            <div class="md:w-2/3"></div>
-          </div>
-        </form>
+            <div class="flex flex-wrap -mx-3 mb-6">
+              <div class="w-full px-3">
+                <label
+                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-email"
+                >{{ $t('form.email') }}</label>
+                <ValidationProvider
+                  tag="div"
+                  rules="required|email"
+                  name="E-mail"
+                  v-slot="{ errors }"
+                >
+                  <input
+                    v-model="email"
+                    type="text"
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  />
+                  <span>{{ errors[0] }}</span>
+                </ValidationProvider>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap -mx-3 mb-6">
+              <div class="w-full px-3">
+                <label
+                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-message"
+                >{{ $t('form.message') }}</label>
+                <ValidationProvider tag="div" name="Message" rules="required" v-slot="{ errors }">
+                  <textarea
+                    v-model="message"
+                    type="text"
+                    class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
+                    id="message"
+                  ></textarea>
+
+                  <span>{{ errors[0] }}</span>
+                </ValidationProvider>
+              </div>
+            </div>
+
+            <button
+              class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            >Submit</button>
+          </form>
+        </ValidationObserver>
       </div>
     </div>
   </div>
@@ -81,10 +94,25 @@
 
 <script>
 import Logo from "~/components/Logo.vue";
+import { ValidationProvider, ValidationObserver } from "vee-validate";
 
 export default {
   components: {
-    Logo
+    Logo,
+    ValidationProvider,
+    ValidationObserver
+  },
+  data: () => ({
+    fname: "",
+    lname: "",
+    email: "",
+    message: ""
+  }),
+  methods: {
+    onSubmit() {
+      console.log(this.$data);
+      this.$router.push("/en/success?");
+    }
   }
 };
 </script>
