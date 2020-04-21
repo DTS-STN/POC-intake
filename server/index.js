@@ -45,7 +45,7 @@ async function start() {
 
 
 var db=process.env.VUE_APP_CONNECTION_STRING.replace('-password-', process.env.VUE_APP_POC_INTAKE_DB_PASSWORD);
-console.log(db);
+// console.log(db);
 
 
 function connectDb() {
