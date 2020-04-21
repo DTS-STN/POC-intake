@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">{{ $t('welcome') }}</h1>
+      <h1 class="title">{{ $t('Thank you for your application') }}</h1>
 
       <div class="w-full max-w-2xl mx-auto">
         <p class="mb-8 text-gray-500 leading-relaxed">
@@ -13,10 +13,6 @@
         <div></div>
       </div>
 
-      <nuxt-link
-        to="/en/form"
-        class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-500 hover:bg-indigo-600 rounded shadow"
-      >{{ $t('getstarted') }}</nuxt-link>
       <h2 class="subtitle"></h2>
     </div>
   </div>
@@ -25,11 +21,7 @@
 <script>
 import Logo from "~/components/Logo.vue";
 
-export default {
-  components: {
-    Logo
-  }
-};
+export default {};
 </script>
 
 <style>
