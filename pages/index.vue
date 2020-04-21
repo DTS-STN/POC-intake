@@ -19,16 +19,28 @@
       >{{ $t('getstarted') }}</nuxt-link>
       <h2 class="subtitle"></h2>
     </div>
+    <section>
+      <h3>VeeValidate - Nuxt Example:</h3>
+      <ValidationProvider rules="required|alpha" v-slot="{ errors }">
+        <input type="text" v-model="value" />
+        <span>{{ errors[0] }}</span>
+      </ValidationProvider>
+    </section>
   </div>
 </template>
 
 <script>
 import Logo from "~/components/Logo.vue";
+import { ValidationProvider } from "vee-validate";
 
 export default {
   components: {
-    Logo
-  }
+    Logo,
+    ValidationProvider
+  },
+  data: () => ({
+    value: ""
+  })
 };
 </script>
 
