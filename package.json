@@ -20,7 +20,7 @@
     "cors": "2.8.5",
     "cross-env": "7.0.2",
     "express": "4.17.1",
-    "mongoose": "5.9.9",
+    "mongoose": "5.9.10",
     "morgan": "1.9.1",
     "nuxt": "2.12.0",
     "@nuxtjs/tailwindcss": "1.4.0",
@@ -29,11 +29,11 @@
   },
   "devDependencies": {
     "@vue/test-utils": "1.0.0-beta.33",
-    "babel-jest": "25.3.0",
-    "jest": "25.3.0",
+    "babel-jest": "25.4.0",
+    "jest": "25.4.0",
     "nodemon": "2.0.3",
     "vue-jest": "4.0.0-beta.2",
-    "cypress": "4.4.0",
+    "cypress": "4.4.1",
     "husky": "4.2.5"
   },
   "husky": {
