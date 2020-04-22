@@ -3,28 +3,28 @@ const express = require("express");
 const consola = require("consola");
 const { Nuxt, Builder } = require("nuxt");
 const app = express();
-
 const morgan = require("morgan");
-const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 // Import and Set Nuxt.js options
 const config = require("../nuxt.config.js");
 config.dev = process.env.NODE_ENV !== "production";
-
-// Parser, CORS and Morgan logging
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 config.dev ? app.use(morgan("dev")) : app.use(morgan("production"));
 
+// Parser, CORS and Morgan logging
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(express.json());
+
+//configure routes
+app.use('/api/poc', require('./routes/poc'));
+
+//Tie Server to Nuxt
 async function start() {
   // Init Nuxt.js
   const nuxt = new Nuxt(config);
-
   const { host, port } = nuxt.options.server;
-
   await nuxt.ready();
   // Build only in dev mode
   if (config.dev) {
@@ -38,15 +38,13 @@ async function start() {
   // Listen the server
   app.listen(port, host);
   consola.ready({
-    message: `Server listening on http://${host}:${port}/en`,
+    message: 'Server listening.....',
     badge: true
   });
 }
 
-
-var db=process.env.VUE_APP_CONNECTION_STRING.replace('-password-', process.env.VUE_APP_POC_INTAKE_DB_PASSWORD);
-// console.log(db);
-
+//build connection string with password
+var db=process.env.VUE_APP_CONNECTION_STRING ? process.env.VUE_APP_CONNECTION_STRING.replace('-password-', process.env.VUE_APP_POC_INTAKE_DB_PASSWORD) : 'empty connection string check environment vars';
 
 function connectDb() {
   mongoose.set("useCreateIndex", true);
