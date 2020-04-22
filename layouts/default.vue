@@ -193,11 +193,11 @@
         </div>
         <div>
           <h1 class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"></h1>
-         <div class="locale-changer">
-    <select v-model="$i18n.locale">
-      <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang">{{ lang }}</option>
-    </select>
-  </div>
+          <nuxt-link
+          v-for="locale in availableLocales"
+          :key="locale.code"
+          :to="switchLocalePath(locale.code)"
+          >{{ locale.name }}</nuxt-link>
         </div>
       </div>
     </nav>
@@ -274,11 +274,12 @@
 
 <script>
 export default {
-  name: 'locale-changer',
-  data () {
-    return { langs: ['en', 'fr'] }
+  computed: {
+    availableLocales() {
+      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale);
+    }
   }
-}
+};
 </script>
 
 
