@@ -1,7 +1,7 @@
 FROM node:11.15.0-alpine
-WORKDIR /.
+WORKDIR /home/poc-intake
 COPY package*.json ./
-RUN npm install
+RUN npm install --production
 COPY . .
 RUN npm run build
 ENV NUXT_HOST=0.0.0.0
