@@ -25,7 +25,7 @@
     "mongoose": "5.9.10",
     "morgan": "1.9.1",
     "nuxt": "2.12.0",
-    "nuxt-i18n": "6.9.1",
+    "nuxt-i18n": "6.9.2",
     "vee-validate": "^3.3.0"
   },
   "devDependencies": {
