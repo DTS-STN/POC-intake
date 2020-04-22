@@ -38,7 +38,7 @@ async function start() {
   // Listen the server
   app.listen(port, host);
   consola.ready({
-    message: 'Server listening.....',
+    message: process.env.NODE_ENV == 'production' ? 'Server listening.....' : `http://${host}:${port}/en` ,
     badge: true
   });
 }
