@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "@nuxtjs/auth": "4.9.1",
-    "@nuxtjs/axios": "5.9.7",
+    "@nuxtjs/axios": "5.10.0",
     "@nuxtjs/dotenv": "1.4.1",
-    "@nuxtjs/tailwindcss": "1.4.0",
+    "@nuxtjs/tailwindcss": "1.4.1",
     "body-parser": "1.19.0",
     "cors": "2.8.5",
     "cross-env": "7.0.2",
@@ -25,8 +25,8 @@
     "mongoose": "5.9.10",
     "morgan": "1.9.1",
     "nuxt": "2.12.0",
-    "nuxt-i18n": "6.9.1",
-    "vee-validate": "^3.3.0"
+    "nuxt-i18n": "6.9.2",
+    "vee-validate": "3.3.0"
   },
   "devDependencies": {
     "@vue/test-utils": "1.0.0-beta.33",
