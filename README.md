@@ -24,6 +24,10 @@ $ npm run generate
 
 ## Setup DB Locally
 
+if you want to work agianst your local DB, you can use this entry in your .env file
+
+VUE_APP_CONNECTION_STRING=mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false
+
 Note you must have mongodb installed on your system
 
 ```bash
