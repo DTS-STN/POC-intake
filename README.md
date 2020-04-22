@@ -1,4 +1,4 @@
-# POC-intake 
+# POC-intake
 
 	
 # BRM needs a website to promote the PoC(proof of concept) process and to allow clients to submit PoC requests.  This would be a quick product delivery similar to the DTS website.  A partnership between BPMO, BRM, DTS and IT Strategy
@@ -23,6 +23,10 @@ $ npm run generate
 ```
 
 ## Setup DB Locally
+
+if you want to work agianst your local DB, you can use this entry in your .env file
+
+VUE_APP_CONNECTION_STRING=mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false
 
 Note you must have mongodb installed on your system
 
