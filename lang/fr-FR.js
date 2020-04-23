@@ -12,6 +12,9 @@ export default {
         send: 'Envoyer',
         fill: 'Veuillez remplir ce champ.'
     },
+    Success: {
+        thankyou: 'Merci pour votre candidature'
+    }
 }
 
 

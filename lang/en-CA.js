@@ -13,4 +13,7 @@ export default {
         send: 'Send',
         fill: 'Please fill out this field.'
     },
+    Success: {
+        thankyou: 'Thank you for your application'
+    },
 }
