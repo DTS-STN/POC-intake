@@ -111,7 +111,7 @@ export default {
   methods: {
     onSubmit() {
       console.log(this.$data);
-      this.$router.push("/en/success?");
+      this.$router.push("success");
     }
   }
 };

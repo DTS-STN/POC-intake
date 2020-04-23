@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">{{ $t('Thank you for your application') }}</h1>
+      <h1 class="title">{{ $t('Success.thankyou') }}</h1>
 
       <div class="w-full max-w-2xl mx-auto">
         <p class="mb-8 text-gray-500 leading-relaxed">
