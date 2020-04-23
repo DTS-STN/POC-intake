@@ -94,3 +94,4 @@ sw.*
 
 # MongoDB
 data/
+database/
