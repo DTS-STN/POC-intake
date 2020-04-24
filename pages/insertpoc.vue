@@ -10,7 +10,7 @@ import { ValidationProvider, ValidationObserver } from "vee-validate";
 
 export default {
   components: {
-    Logo,
+    Form,
     ValidationProvider,
     ValidationObserver
   },

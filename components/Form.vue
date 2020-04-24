@@ -96,12 +96,10 @@
 
 
 <script>
-import Logo from "~/components/Logo.vue";
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 
 export default {
   components: {
-    Logo,
     ValidationProvider,
     ValidationObserver
   },
