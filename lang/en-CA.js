@@ -25,10 +25,13 @@ export default {
         send: 'Send',
         fill: 'Please fill out this field.'
     },
-    success: {
+    success2: {
         success: 'Success!',
         title: 'Thank you for your application',
         subTitle: 'Insert text here about what happens next...',
         back: 'Back >>',
-    }
+    },
+    Success: {
+        thankyou: 'Thank you for your application'
+    },
 }

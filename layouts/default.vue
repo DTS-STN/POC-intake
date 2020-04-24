@@ -201,7 +201,10 @@
         </div>
       </div>
     </nav>
+
+
     <nuxt />
+
 
     <hr class='clearfix' />
     
