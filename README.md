@@ -22,7 +22,7 @@ $ npm run start
 $ npm run generate
 ```
 
-## Setup DB Locally
+## Setup DB Locally (Run this in an external terminal - not VSCode)
 
 if you want to work agianst your local DB, you can use this entry in your .env file
 
@@ -38,8 +38,11 @@ mkdir data/db
 # Initialize DB
 mongod --dbpath ./data/db
 
-# Run Nuxt application
-npm run dev
+# Alternate method (automated script)
+npm run database
+
+# Import script for test data CSV
+npm run dbimport
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
