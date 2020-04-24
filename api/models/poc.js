@@ -6,6 +6,6 @@ const pocSchema = new mongoose.Schema({
     field3: { type: String },
     field4: { type: String },
     field5: { type: String },
-}, {collection: 'poc'});
+});
 
 module.exports = mongoose.model('Poc', pocSchema);
