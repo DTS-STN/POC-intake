@@ -1,8 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <logo />
-      <GocLogoEn />
+   
       <h1 class="title">{{ $t('welcome') }}</h1>
 
       <div class="w-full max-w-2xl mx-auto">
@@ -27,7 +26,6 @@
 
 <script>
 import Logo from "~/components/Logo.vue";
-import GocLogoEn from "~components/GocLogoEn.vue";
 export default {
   computed: {
     availableLocales() {
@@ -35,7 +33,6 @@ export default {
     }
   },
   components: {
-    GocLogoEn,
     Logo
   }
 };
