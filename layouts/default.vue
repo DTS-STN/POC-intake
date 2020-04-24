@@ -53,7 +53,7 @@
 
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <img width="50%" src="@/assets/img/canada_footer_logo.svg" />
-        
+
       </div>
       <GocLogoEn></GocLogoEn>
     </nav>
@@ -64,13 +64,13 @@
 
 export default {
   computed:
-   { 
+   {
     availableLocales() {
       return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale);
     },
   },
 
-  
+
 };
 </script>
 
