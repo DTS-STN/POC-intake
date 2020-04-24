@@ -2,15 +2,24 @@
   <div>
     <nav class="flex items-center justify-between flex-wrap bg-white-500 p-6">
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div class="text-sm lg:flex-grow">
-          <a href="https://www.canada.ca/home.html">  <img width="25%" src="@/assets/img/canada_header.svg" /> </a>
+        <div class="text-sm lg:flex-grow" v-if="this.$i18n.locale === 'en'">
+          <a href="https://www.canada.ca/home.html">
+            <img width="25%" src="@/assets/img/canada_header.svg" />
+          </a>
         </div>
+        <div class="text-sm lg:flex-grow" v-if="this.$i18n.locale === 'fr'">
+          <a href="https://www.canada.ca/home.html">
+            <img width="25%" src="@/assets/img/canada_header.svg" />
+          </a>
+        </div>
+
         <div>
           <h1 class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"></h1>
+          <canada />
           <nuxt-link
-          v-for="locale in availableLocales"
-          :key="locale.code"
-          :to="switchLocalePath(locale.code)"
+            v-for="locale in availableLocales"
+            :key="locale.code"
+            :to="switchLocalePath(locale.code)"
           >{{ locale.name }}</nuxt-link>
         </div>
       </div>
@@ -53,7 +62,6 @@
 
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <img width="50%" src="@/assets/img/canada_footer_logo.svg" />
-        
       </div>
       <GocLogoEn></GocLogoEn>
     </nav>
@@ -61,16 +69,16 @@
 </template>
 
 <script>
-
+import canada from "~/components/canada.vue";
 export default {
-  computed:
-   { 
+  computed: {
     availableLocales() {
       return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale);
-    },
+    }
   },
-
-  
+  components: {
+    canada
+  }
 };
 </script>
 
