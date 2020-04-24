@@ -3,6 +3,7 @@
     <nav class="flex items-center justify-between flex-wrap bg-white-500 p-6">
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
+           <GocLogoEn></GocLogoEn>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 2456.9 229.81"
@@ -267,18 +268,26 @@
           </g>
         </svg>
       </div>
-      <GocFooter></GocFooter>
+      <GocLogoEn></GocLogoEn>
     </nav>
   </div>
 </template>
 
 <script>
+
+import GocLogoEn from "@components/GocLogoEn.vue"
 export default {
-  computed: {
+  computed:
+   { 
     availableLocales() {
       return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale);
+    },
+    components: {
+      GocLogoEn
     }
-  }
+  },
+
+  
 };
 </script>
 
