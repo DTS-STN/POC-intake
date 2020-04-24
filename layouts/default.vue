@@ -3,7 +3,12 @@
     <nav class="flex items-center justify-between flex-wrap bg-white-500 p-6">
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
-          <a href="https://www.canada.ca/home.html">  <img width="25%" src="@/assets/img/canada_header.svg" /> </a>
+          <a alt="government of canada site link" href="https://www.canada.ca/home.html">  <img alt="government of canada logo" width="25%" src="@/assets/img/canada_header.svg" /> </a>
+        <div class="text-sm lg:flex-grow" v-if="this.$i18n.locale === 'fr'">
+            <a alt="lien vers le site du gouvernement du canada" href="https://www.canada.ca/home.html">
+            <img alt="logo du gouvernement du canada" width="25%" src="@/assets/img/canadaFr.svg" />
+          </a>
+        </div>
         </div>
         <div>
           <h1 class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"></h1>
