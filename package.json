@@ -21,7 +21,7 @@
     "@nuxtjs/dotenv": "1.4.1",
     "@nuxtjs/tailwindcss": "1.4.1",
     "body-parser": "1.19.0",
-    "core-js": "2.6.11",
+    "core-js": "3.6.5",
     "cors": "2.8.5",
     "cross-env": "7.0.2",
     "express": "4.17.1",
