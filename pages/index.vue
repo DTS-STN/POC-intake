@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <logo />
+   
       <h1 class="title">{{ $t('welcome') }}</h1>
 
       <div class="w-full max-w-2xl mx-auto">
@@ -26,7 +26,6 @@
 
 <script>
 import Logo from "~/components/Logo.vue";
-
 export default {
   computed: {
     availableLocales() {

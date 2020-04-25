@@ -21,6 +21,7 @@
     "@nuxtjs/dotenv": "1.4.1",
     "@nuxtjs/tailwindcss": "1.4.1",
     "body-parser": "1.19.0",
+    "core-js": "3.6.5",
     "cors": "2.8.5",
     "cross-env": "7.0.2",
     "express": "4.17.1",
@@ -37,7 +38,7 @@
     "nodemon": "2.0.3",
     "vue-jest": "4.0.0-beta.2",
     "cypress": "4.4.1",
-    "mongo-tools": "^1.0.0",
+    "mongo-tools": "1.0.0",
     "husky": "4.2.5"
   },
   "husky": {
