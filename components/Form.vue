@@ -15,7 +15,7 @@
                 <ValidationProvider tag="div" rules="fname" name="firstName" v-slot="{ errors }">
                   <input
                     name="fname"
-                    v-model="fname"
+                    v-model="poc.fname"
                     type="text"
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                   />
@@ -30,7 +30,7 @@
                 <ValidationProvider tag="div" rules="lname" name="lastName" v-slot="{ errors }">
                   <input
                     name="lname"
-                    v-model="lname"
+                    v-model="poc.lname"
                     type="text"
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   />
@@ -52,7 +52,7 @@
                   v-slot="{ errors }"
                 >
                   <input
-                    v-model="email"
+                    v-model="poc.email"
                     type="text"
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   />
@@ -69,7 +69,7 @@
                 >{{ $t('form.message') }}</label>
                 <ValidationProvider tag="div" name="Message" rules="required" v-slot="{ errors }">
                   <textarea
-                    v-model="message"
+                    v-model="poc.message"
                     type="text"
                     class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
                     id="message"
@@ -98,15 +98,12 @@ export default {
     Button
   },
   data: () => ({
-    fname: "",
-    lname: "",
-    email: "",
-    message: "",
+    poc: [],
     err: ''
   }),
   methods: {
     async onSubmit() {
-      let confirm = await PocService.insertPoc(this.fname, this.lname, this.email, this.message);
+      let confirm = await PocService.insertPoc(this.poc.fname, this.poc.lname, this.poc.email, this.poc.message);
       console.log(this.$data);
       this.$router.push("success");
     }
