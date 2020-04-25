@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <!-- <logo /> -->
       <h1 class="title">{{ $t('form.successpage') }}</h1>
-
       <h2 class="subtitle"></h2>
       <div class="content">
         <ValidationObserver v-slot="{ handleSubmit }">
@@ -92,13 +90,15 @@
   </div>
 </template>
 
-
-
-
 <script>
 import { ValidationProvider, ValidationObserver } from "vee-validate";
-
+import PocService from "../requests/PocService";
 export default {
+  name: "Form",
+  computed: {
+    availableLocales() {
+      return this.$i18n.locales.filter(i => i.code == this.$i18n.locale);
+    },
   components: {
     ValidationProvider,
     ValidationObserver
@@ -107,10 +107,12 @@ export default {
     fname: "",
     lname: "",
     email: "",
-    message: ""
+    message: "",
+    err: ''
   }),
   methods: {
-    onSubmit() {
+    async onSubmit() {
+      let confirm = await PocService.insertPoc(this.fname, this.lname, this.email, this.message);
       console.log(this.$data);
       this.$router.push("success");
     }
@@ -119,11 +121,6 @@ export default {
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
 .container {
   margin: 0 auto;
   min-height: 100vh;

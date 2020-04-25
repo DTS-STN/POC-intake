@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import something from ''
 import Form from '@/components/Form.vue'
 
 describe('Form', () => {
