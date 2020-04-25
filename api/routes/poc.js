@@ -3,28 +3,20 @@ const router = express.Router();
 
 const Poc = require('../models/poc');
 
-<<<<<<< HEAD
 
-// @route   GET api/employees
-// @desc    Get All Employees
+// @route   GET api/poc
+// @desc    Gets all existing PoC's in database
 // @access  Public requires the user to have log first
 
 router.get('/', function(req, res){
 
     console.log(" trying to get the data ")
 
-=======
-//Gets all existing PoC's in database
-router.get('/poc', function(req, res){
->>>>>>> origin/pond-api
     Poc
     .find(function(err, poc){ res.json(poc);})
     .catch(err => { console.log( err ) });
 });
 
-<<<<<<< HEAD
-module.exports = router;
-=======
 //Saves our form data
 router.post('/insertpoc', function(req, res){
   const savepoc = new Poc({
@@ -39,4 +31,3 @@ router.post('/insertpoc', function(req, res){
 });
 
 module.exports = router;
->>>>>>> origin/pond-api
