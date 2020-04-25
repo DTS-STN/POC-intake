@@ -6,7 +6,7 @@ const Poc = require('../models/poc');
 
 // @route   GET api/poc
 // @desc    Gets all existing PoC's in database
-// @access  Public requires the user to have log first
+// @access  Public 
 
 router.get('/', function(req, res){
 
@@ -17,7 +17,11 @@ router.get('/', function(req, res){
     .catch(err => { console.log( err ) });
 });
 
-//Saves our form data
+
+// @route   POST api/insertpoc
+// @desc    Saves our form data
+// @access  Public 
+
 router.post('/insertpoc', function(req, res){
   const savepoc = new Poc({
     fname: `${req.query.fname}`,
