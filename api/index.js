@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json());
 
-//configure routes
-app.use('/api/poc', require('./routes/poc'));
+//get all pocs
+app.use('/api/', require('./routes/poc'));
 
 //Tie Server to Nuxt
 async function start() {

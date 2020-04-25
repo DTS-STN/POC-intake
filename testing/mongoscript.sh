@@ -1,3 +1,3 @@
-mkdir database
-mkdir database/db
-mongod --dbpath ./database/db
+mkdir data
+mkdir data/db
+mongod --dbpath ./data/db
