@@ -86,9 +86,6 @@
   </div>
 </template>
 
-
-
-
 <script>
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 import Button from './Button';
