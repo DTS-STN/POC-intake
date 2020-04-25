@@ -95,3 +95,4 @@ sw.*
 # MongoDB
 data/
 database/
+.vscode/
