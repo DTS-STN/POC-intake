@@ -1,10 +1,9 @@
 import { mount } from '@vue/test-utils'
-import something from ''
-import Form from '@/components/Form.vue'
+import Button from '@/components/Button.vue'
 
-describe('Form', () => {
+describe('Button', () => {
   test('is a Vue instance', () => {
-    const wrapper = mount(Form)
+    const wrapper = mount(Button)
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 })
