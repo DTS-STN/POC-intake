@@ -95,10 +95,6 @@ import { ValidationProvider, ValidationObserver } from "vee-validate";
 import PocService from "../requests/PocService";
 export default {
   name: "Form",
-  computed: {
-    availableLocales() {
-      return this.$i18n.locales.filter(i => i.code == this.$i18n.locale);
-    },
   components: {
     ValidationProvider,
     ValidationObserver
