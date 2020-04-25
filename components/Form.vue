@@ -74,15 +74,11 @@
                     class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
                     id="message"
                   ></textarea>
-
+                  <Button />
                   <span>{{ errors[0] }}</span>
                 </ValidationProvider>
               </div>
             </div>
-
-            <button
-              class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-            >Submit</button>
           </form>
         </ValidationObserver>
       </div>
@@ -92,12 +88,14 @@
 
 <script>
 import { ValidationProvider, ValidationObserver } from "vee-validate";
+import Button from './Button';
 import PocService from "../requests/PocService";
 export default {
   name: "Form",
   components: {
     ValidationProvider,
-    ValidationObserver
+    ValidationObserver,
+    Button
   },
   data: () => ({
     fname: "",
