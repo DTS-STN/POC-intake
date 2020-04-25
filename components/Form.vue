@@ -117,7 +117,7 @@ export default {
       this.$router.push("success");
     }
   }
-};
+}
 </script>
 
 <style>
