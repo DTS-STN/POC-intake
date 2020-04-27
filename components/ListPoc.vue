@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <h2 class="subtitle">List of all POC</h2>
+    <h2 class="subtitle"> {{ $t('list.title') }}</h2>
     
     <div class="container">
       <div v-for="poc in allPOC" v-bind:key="poc._id" >
