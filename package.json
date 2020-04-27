@@ -12,6 +12,7 @@
     "test": "jest",
     "cypress": "cypress run --reporter junit --reporter-options 'mochaFile=/cypress/report/test-output-[hash].xml'",
     "cy-open": "cypress open",
+    "cy-run": "cypress run",
     "database": "./testing/mongoscript.sh",
     "dbimport": "./testing/importscript.sh"
   },
