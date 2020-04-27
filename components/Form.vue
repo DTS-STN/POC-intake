@@ -1,41 +1,41 @@
 <template>
 <div class="container">
     <div>
-        <h1 class="title">{{ $t('form.successpage') }}</h1>
+        <h1 class="title" data-cy="form-title">{{ $t('form.successpage') }}</h1>
         <h2 class="subtitle"></h2>
         <div class="content">
             <ValidationObserver v-slot="{ handleSubmit }">
                 <form @submit.prevent="handleSubmit(onSubmit)">
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">{{ $t('form.firstname') }}</label>
-                            <ValidationProvider tag="div" rules="fname" name="firstName" v-slot="{ errors }">
-                                <input name="fname" v-model="poc.fname" type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" />
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name" data-cy="fn-title">{{ $t('form.firstname') }}</label>
+                            <ValidationProvider tag="div" rules="fname" name="firstName" data-cy="fn-error" v-slot="{ errors }">
+                                <input name="fname" v-model="poc.fname" type="text" data-cy="fn-text-entry" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" />
                                 <span>{{ errors[0] }}</span>
                             </ValidationProvider>
                         </div>
                         <div class="w-full md:w-1/2 px-3">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">{{ $t('form.lastname') }}</label>
-                            <ValidationProvider tag="div" rules="lname" name="lastName" v-slot="{ errors }">
-                                <input name="lname" v-model="poc.lname" type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" />
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name" data-cy="ln-title">{{ $t('form.lastname') }}</label>
+                            <ValidationProvider tag="div" rules="lname" name="lastName" data-cy="ln-error" v-slot="{ errors }">
+                                <input name="lname" v-model="poc.lname" type="text" data-cy="ln-text-entry" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" />
                                 <span>{{ errors[0] }}</span>
                             </ValidationProvider>
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-email">{{ $t('form.email') }}</label>
-                            <ValidationProvider tag="div" rules="required|email" name="E-mail" v-slot="{ errors }">
-                                <input v-model="poc.email" type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" />
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-email" data-cy="email-title">{{ $t('form.email') }}</label>
+                            <ValidationProvider tag="div" rules="required|email" name="E-mail" data-cy="email-error" v-slot="{ errors }">
+                                <input v-model="poc.email" type="text" data-cy="email-entry" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" />
                                 <span>{{ errors[0] }}</span>
                             </ValidationProvider>
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-message">{{ $t('form.message') }}</label>
-                            <ValidationProvider tag="div" name="Message" rules="required" v-slot="{ errors }">
-                                <textarea v-model="poc.message" type="text" class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="message"></textarea>
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-message" data-cy="message-title">{{ $t('form.message') }}</label>
+                            <ValidationProvider tag="div" name="Message" rules="required" data-cy="message-error" v-slot="{ errors }">
+                                <textarea v-model="poc.message" type="text" data-cy="message-entry" class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="message"></textarea>
                                 <!-- BUTTON COMPONENT -->
                                 <Button />
                                 <span>{{ errors[0] }}</span>

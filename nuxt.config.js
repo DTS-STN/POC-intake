@@ -9,10 +9,15 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    htmlAttrs: {
+      lang: 'en'
+    
+    }
   },
   /*
   ** Customize the progress-bar color
@@ -45,7 +50,7 @@ module.exports = {
     ['nuxt-i18n', {
       locales: [
         {
-          name: 'French',
+          name: 'Français',
           code: 'fr',
           iso: 'fr-FR',
           file: 'fr-FR.js'
@@ -59,6 +64,8 @@ module.exports = {
       ],
       lazy: true,
       langDir: 'lang/',
+      strategy: 'prefix_and_default',
+      defaultLocale: 'en'
     }]
   ],
   /*
