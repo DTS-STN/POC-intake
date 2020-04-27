@@ -4,13 +4,12 @@
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         
         <div v-if="this.$i18n.locale === 'en'" class="text-sm lg:flex-grow">
-          <a alt="government of canada site link" href="https://www.canada.ca/home.html">  
-          <img alt="government of canada logo" width="25%" src="~/assets/img/canada_header.svg" /> </a>
+          <a :alt=" $t('header.linkAlt') " :href=" $t('header.link') ">  
+          <img :alt=" $t('header.logoAlt') " width="25%" src="~/assets/img/canada_header.svg" /> </a>
         </div>
         <div v-else class="text-sm lg:flex-grow" >
-            <a alt="lien vers le site du gouvernement du canada" href="https://www.canada.ca/home.html">
-            <img alt="logo du gouvernement du canada" width="25%" src="~/assets/img/canadaFr.svg" />
-          </a>
+            <a :alt=" $t('header.linkAlt') " :href=" $t('header.link') ">
+            <img :alt=" $t('header.logoAlt') " width="25%" src="~/assets/img/canadaFr.svg" />  </a>
         </div>
         
         <div>
@@ -40,32 +39,32 @@
             <a
               href="https://www.canada.ca/en/social.html"
               class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text- mr-4"
-            >Social media</a>
+            > {{ $t('footer.site') }} </a>
             <a
               href="https://www.canada.ca/en/mobile.html"
               class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            >Mobile applications</a>
+            > {{ $t('footer.social') }} </a>
             <a
               href="https://www.canada.ca/en/government/about.html"
               class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            >About Canada.ca</a>
+            > {{ $t('footer.about') }} </a>
             <a
               href="https://www.canada.ca/en/transparency/terms.html"
               class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            >Terms and conditions</a>
+            > {{ $t('footer.terms') }} </a>
             <a
               href="https://home.dts-stn.com/index.html"
               class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            >Privacy</a>
+            > {{ $t('footer.privacy') }} </a>
             <a
               href="https://www.canada.ca/en/transparency/terms.html"
               class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            >Digital technology soulutions</a>
+            > {{ $t('footer.dts') }} </a>
           </div>
         </div>
       </ul>
 
-      <img width="50%" src="~/assets/img/canada_footer_logo.svg" />
+      <img width="50%" src="~/assets/img/canada_footer_logo.svg" :alt=" $t('footer.symbol') " :title=" $t('footer.symbol') "  />
 
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <img width="50%" src="~/assets/img/canada_footer_logo.svg" />
