@@ -1,14 +1,14 @@
 <template>
 <div>
-    <Form />
+    <PocInsertForm />
 </div>
 </template>
 
 <script>
-import Form from "~/components/Form.vue";
+import PocInsertForm from "./PocInsertForm";
 export default {
     components: {
-        Form
+        PocInsertForm
     }
 };
 </script>

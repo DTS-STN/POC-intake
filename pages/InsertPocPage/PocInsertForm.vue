@@ -1,8 +1,7 @@
 <template>
 <div class="container">
     <div>
-        <h1 class="title" data-cy="form-title">{{ $t('form.successpage') }}</h1>
-        <h2 class="subtitle"></h2>
+        <AppTitles :MainTitle="$t('form.successpage')" SubTitle="" CypressName="form-title" />
         <div class="content">
             <ValidationObserver v-slot="{ handleSubmit }">
                 <form @submit.prevent="handleSubmit(onSubmit)">
@@ -37,7 +36,7 @@
                             <ValidationProvider tag="div" name="Message" rules="required" data-cy="message-error" v-slot="{ errors }">
                                 <textarea v-model="poc.message" type="text" data-cy="message-entry" class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="message"></textarea>
                                 <!-- BUTTON COMPONENT -->
-                                <Button />
+                                <AppButton />
                                 <span>{{ errors[0] }}</span>
                             </ValidationProvider>
                         </div>
@@ -51,14 +50,16 @@
 
 <script>
 import { ValidationProvider, ValidationObserver } from "vee-validate";
-import Button from "./Button";
-import PocService from "../requests/PocService";
+import AppTitles from "~/components/AppTitles";
+import AppButton from "~/components/AppButton";
+import APIService from "~/services/APIService";
 export default {
-    name: "Form",
+    name: "PocInsertForm",
     components: {
         ValidationProvider,
         ValidationObserver,
-        Button
+        AppTitles,
+        AppButton
     },
     data: () => ({
         poc: [],
@@ -66,7 +67,7 @@ export default {
     }),
     methods: {
         async onSubmit() {
-            let confirm = await PocService.insertPoc(
+            let confirm = await APIService.insertPoc(
                 this.poc.fname,
                 this.poc.lname,
                 this.poc.email,

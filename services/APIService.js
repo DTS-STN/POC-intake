@@ -1,9 +1,12 @@
 import axios from 'axios';
-const api=`${process.env.VUE_APP_API_URL}` ? `${process.env.VUE_APP_API_URL}` : "http://localhost:3000/api/" ;
+
+//using default if there's no ENV var injected.
+const api=`${process.env.VUE_APP_API_URL}` == undefined ? "http://localhost:3000/api/" : `${process.env.VUE_APP_API_URL}`;
 console.log(`using API: ${api}`);
-class PocService{
+
+class APIService{
   static insertPoc(fname, lname, email, message){
     return axios.post(`${api}insertpoc`, null, { params: {fname: fname, lname: lname, email: email, message: message}});
   }
 }
-export default PocService;
+export default APIService;

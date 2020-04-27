@@ -3,5 +3,5 @@
 </template>
 
 <script>
-export default { name: "Button" }
+export default { name: "AppButton" }
 </script>
