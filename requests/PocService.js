@@ -1,5 +1,5 @@
 import axios from 'axios';
-const api=`${process.env.VUE_APP_API_URL}`;
+const api='http://localhost:3000/api/';
 console.log(`using API: ${api}`);
 class PocService{
   static insertPoc(fname, lname, email, message){
