@@ -55,7 +55,7 @@ import AppTitles from "~/components/AppTitles";
 import AppButton from "~/components/AppButton";
 import APIService from "~/services/APIService";
 export default {
-    name: "PocInsertForm",
+    name: "InsertPocForm",
     components: {
         ValidationProvider,
         ValidationObserver,
