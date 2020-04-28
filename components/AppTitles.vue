@@ -1,13 +1,13 @@
 <template>
 <div>
-    <h1 class="title" :data-cy="CypressName">{{MainTitle}}</h1>
-    <h2 class="subtitle">{{SubTitle}}</h2>
+    <h1 class="title" :data-cy="data_cy">{{maintitle}}</h1>
+    <h2 class="subtitle">{{subtitle}}</h2>
 </div>
 </template>
 
 <script>
 export default {
     name: "AppTitles",
-    props: ['MainTitle', 'SubTitle', 'CypressName']
+    props: ['maintitle', 'subtitle', 'data_cy']
 }
 </script>

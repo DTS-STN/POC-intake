@@ -1,7 +1,8 @@
 <template>
 <div class="container">
     <div>
-        <AppTitles :MainTitle="$t('form.successpage')" SubTitle="" CypressName="form-title" />
+        <!-- AppTitles component -->
+        <AppTitles :maintitle="$t('form.successpage')" subtitle="" data_cy="form-title" />
         <div class="content">
             <ValidationObserver v-slot="{ handleSubmit }">
                 <form @submit.prevent="handleSubmit(onSubmit)">
@@ -35,8 +36,8 @@
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-message" data-cy="message-title">{{ $t('form.message') }}</label>
                             <ValidationProvider tag="div" name="Message" rules="required" data-cy="message-error" v-slot="{ errors }">
                                 <textarea v-model="poc.message" type="text" data-cy="message-entry" class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="message"></textarea>
-                                <!-- BUTTON COMPONENT -->
-                                <AppButton />
+                                <!-- AppButton component -->
+                                <AppButton text="Submit: TODO Translate" />
                                 <span>{{ errors[0] }}</span>
                             </ValidationProvider>
                         </div>

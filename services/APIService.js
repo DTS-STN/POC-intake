@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 //using default if there's no ENV var injected.
-const api=`${process.env.VUE_APP_API_URL}` == undefined ? "http://localhost:3000/api/" : `${process.env.VUE_APP_API_URL}`;
+//const api=`${process.env.VUE_APP_API_URL}` == undefined ? "http://localhost:3000/api/" : `${process.env.VUE_APP_API_URL}`;
+//Temporary hardcode of API
+const api = "http://localhost:3000/api/";
 console.log(`using API: ${api}`);
 
 class APIService{

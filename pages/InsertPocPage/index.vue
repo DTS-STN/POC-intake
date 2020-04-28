@@ -1,14 +1,14 @@
 <template>
 <div>
-    <PocInsertForm />
+    <InsertPocForm />
 </div>
 </template>
 
 <script>
-import PocInsertForm from "./PocInsertForm";
+import InsertPocForm from "./InsertPocForm";
 export default {
     components: {
-        PocInsertForm
+        InsertPocForm
     }
 };
 </script>
