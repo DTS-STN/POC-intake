@@ -10,14 +10,14 @@
                         <InsertPocTextBox name="lname" rules="lname" v-model="poc.name" type="text" labelfor="grid-last-name" :labeltext="$t('form.lastname')" validname="lastName" data_cy_label="ln-title" data_cy_validation="ln-error" data_cy_field="ln-text-entry" divclass="w-full md:w-1/2 px-3 mb-6 md:mb-0"/>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
-                        <InsertPocTextBox name="email" rules="required|email" v-model="poc.email" type="text" labelfor="grid-email" :labeltext="$t('form.email')" validname="E-mail" data_cy_label="email-title" data_cy_validation="email-error" data_cy_field="email-text-entry" divclass="w-full px-3"/>
+                        <InsertPocTextBox name="email" rules="required|email" v-model="poc.email" type="text" labelfor="grid-email" :labeltext="$t('form.email')" validname="E-mail" data_cy_label="email-title" data_cy_validation="email-error" data_cy_field="email-entry" divclass="w-full px-3"/>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3">
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-message" data-cy="message-title">{{ $t('form.message') }}</label>
                             <ValidationProvider tag="div" name="Message" rules="required" data-cy="message-error" v-slot="{ errors }">
                                 <textarea v-model="poc.message" type="text" data-cy="message-entry" class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="message"></textarea>
-                                <AppButton text='submit' />
+                                <AppButton text='submit' data_cy="submit-button" />
                                 <span>{{ errors[0] }}</span>
                             </ValidationProvider>
                         </div>
