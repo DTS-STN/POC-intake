@@ -3,5 +3,5 @@
 </template>
 
 <script>
-export default { name: "AppButton", props: [text, data_cy] }
+export default { name: "AppButton", props: ["text", "data_cy"] }
 </script>
