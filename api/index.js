@@ -8,19 +8,18 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-
 // Import and Set Nuxt.js options
 const config = require("../nuxt.config.js");
 config.dev = process.env.NODE_ENV !== "production";
 config.dev ? app.use(morgan("dev")) : app.use(morgan("production"));
 
-// Parser, CORs and Morgan logging
+// Parser, CORS and Morgan logging
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(cors);
+app.use(cors());
 
-//Creating API connection
+//get all pocs
 app.use('/api/', require('./routes/poc'));
 
 //Tie Server to Nuxt
