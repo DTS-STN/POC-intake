@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: "PocInsertTextBox",
+    name: "InsertPocTextBox",
     props: [ type, labelfor, data_cy_label, data_cy_validation, data_cy_field, labeltext, labelname, rules, name, v_model ]
 };
 </script>
