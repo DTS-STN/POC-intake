@@ -9,7 +9,7 @@ describe('open to the form page', function() {
       // Test the page changes when the start button is clicked.
       cy.get('[data-cy=start-button]').should('be.visible')
       cy.get('[data-cy=start-button]').click()
-      cy.url().should('include', '/en/insertpoc')
+      cy.url().should('include', '/en/InsertPocPage')
 
   })
   })
