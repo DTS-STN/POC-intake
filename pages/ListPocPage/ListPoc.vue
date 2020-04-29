@@ -27,13 +27,13 @@
 </template>
 
 <script>
-import APIService from '../services/APIService';
+import APIService from '../../services/APIService';
 export default {
     name: "ListPoc",
     data: () => ({
       allPOC: null
     }),
-    created() { this.allPOC = APIService.getPocs(); }
+    created() {  APIService.getAllPocs(document.URL).then( res => this.allPOC=res.data ); }
 }
 </script>
 

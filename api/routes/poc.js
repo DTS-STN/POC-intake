@@ -4,14 +4,13 @@ const router = express.Router();
 const Poc = require('../models/poc');
 
 
-// @route   GET api/poc
+// @route   GET api/allpocs
 // @desc    Gets all existing PoC's in database
 // @access  Public
 
-router.get('/', function(req, res){
-    console.log("hitting api for all pocs")
+router.get('/allpocs', function(req, res){
     Poc
-    .find(function(poc){ res.json(poc);})
+    .find((err, poc) => { res.json(poc);})
     .catch(err => { console.log( err ) });
 });
 
@@ -28,10 +27,10 @@ router.post('/insertpoc', function(req, res){
     message: `${req.query.message}`
   });
   savepoc.save()
-    .then(() => {res.status(200).json({'poc': 'your poc was saved'})})
+    .then(poc => {res.status(200).json({'poc': 'your poc was saved'})})
     .catch(err => {
       res.status(400).send("unable to save to database");
-      console.log( err );
+      console.log(err);
     });
 });
 
