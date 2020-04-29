@@ -64,10 +64,10 @@
         </div>
       </ul>
 
-      <img width="50%" src="~/assets/img/canada_footer_logo.svg" :alt=" $t('footer.symbol') " :title=" $t('footer.symbol') "  />
+     
 
       <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <img width="50%" src="~/assets/img/canada_footer_logo.svg" />
+        <img width="50%" src="~/assets/img/canada_footer_logo.svg" :alt=" $t('footer.symbol') " :title=" $t('footer.symbol') "  />
       </div>
 
     </nav>
