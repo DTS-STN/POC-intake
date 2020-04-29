@@ -3,7 +3,6 @@ const express = require("express");
 const consola = require("consola");
 const { Nuxt, Builder } = require("nuxt");
 const app = express();
-const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -11,7 +10,6 @@ const cors = require("cors");
 // Import and Set Nuxt.js options
 const config = require("../nuxt.config.js");
 config.dev = process.env.NODE_ENV !== "production";
-config.dev ? app.use(morgan("dev")) : app.use(morgan("production"));
 
 // Parser, CORS and Morgan logging
 app.use(bodyParser.urlencoded({ extended: false }));
