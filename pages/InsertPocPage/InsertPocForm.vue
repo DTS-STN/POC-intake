@@ -46,7 +46,9 @@ export default {
     },
     data: () => ({
         poc: [],
-        err: ""
+        err: "",
+        resSub: null
+
     }),
     methods: {
         async onSubmit() {
@@ -55,9 +57,7 @@ export default {
                 this.poc.lname,
                 this.poc.email,
                 this.poc.message
-            );
-            console.log(this.$data);
-            this.$router.push("success");
+            ).then(() => {this.$router.push("success");}).catch( error => {console.log(error); this.$router.push("error"); });
         }
     }
 };

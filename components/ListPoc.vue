@@ -1,64 +1,40 @@
 <template>
-  <div>
-
+<div>
     <h2 class="subtitle"> {{ $t('list.title') }}</h2>
-    
     <div class="container">
-      <div v-for="poc in allPOC" v-bind:key="poc._id" >
+        <div v-for="poc in allPOC" v-bind:key="poc._id">
 
-        <div class="datagrid">
-          <div class="dataCell">
-            <div class="celldiv">
-              {{ poc.fname }} 
+            <div class="datagrid">
+                <div class="dataCell">
+                    <div class="celldiv">
+                        {{ poc.fname }}
+                    </div>
+                    <div class="celldiv">
+                        {{ poc.lname }}
+                    </div>
+                </div>
+                <div class="dataCell">
+                    {{ poc.email }}
+                </div>
+                <div class="dataCell description">
+                    {{ poc.message }}
+                </div>
             </div>
-            <div class="celldiv">
-              {{ poc.lname }}
-            </div>
-          </div>
-          <div class="dataCell">
-              {{ poc.email }}
-          </div>
-          <div class="dataCell description">
-              {{ poc.message }}
-          </div>
+
         </div>
-
-      </div>
     </div>
-
-  </div>
+</div>
 </template>
 
-
 <script>
-
-  import axios from 'axios';
-  const api=`${process.env.VUE_APP_API_URL}`;
-
-  export default {
+import APIService from '../services/APIService';
+export default {
     name: "ListPoc",
-
-    data() {
-      return {
-        allPOC : null
-      }
-    },
-
-    methods: {
-      fetchPoc () {
-        axios.get ( `${api}` ) 
-          .then( response => {
-            (this.allPOC = response.data)
-          })
-          .catch( error => {
-            console.log(error)
-          })
-      }
-    },
-    created() {
-      this.fetchPoc()
-    }
-  }
+    data: () => ({
+      allPOC: null
+    }),
+    created() { this.allPOC = APIService.getPocs(); }
+}
 </script>
 
 

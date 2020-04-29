@@ -6,21 +6,19 @@ const Poc = require('../models/poc');
 
 // @route   GET api/poc
 // @desc    Gets all existing PoC's in database
-// @access  Public 
+// @access  Public
 
 router.get('/', function(req, res){
-
-    console.log(" trying to get the data ")
-
+    console.log("hitting api for all pocs")
     Poc
-    .find(function(err, poc){ res.json(poc);})
+    .find(function(poc){ res.json(poc);})
     .catch(err => { console.log( err ) });
 });
 
 
 // @route   POST api/insertpoc
 // @desc    Saves our form data
-// @access  Public 
+// @access  Public
 
 router.post('/insertpoc', function(req, res){
   const savepoc = new Poc({
@@ -30,8 +28,11 @@ router.post('/insertpoc', function(req, res){
     message: `${req.query.message}`
   });
   savepoc.save()
-    .then(poc => {res.status(200).json({'poc': 'your poc was saved'})})
-    .catch(err => {res.status(400).send("unable to save to database")});
+    .then(() => {res.status(200).json({'poc': 'your poc was saved'})})
+    .catch(err => {
+      res.status(400).send("unable to save to database");
+      console.log( err );
+    });
 });
 
 module.exports = router;
