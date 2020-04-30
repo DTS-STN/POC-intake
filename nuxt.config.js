@@ -31,7 +31,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ["~/plugins/vee-validate",  "plugins/moment.js"
+  plugins: ["~/plugins/vee-validate",  
 
   ],
   /*
