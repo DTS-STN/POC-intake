@@ -6,9 +6,9 @@
 </template>
 <script>
 export default {
-  props: {
-    error: String
-  }
+ // props: {
+   // error: String
+  //}
 }
 </script>
 <style scoped>
