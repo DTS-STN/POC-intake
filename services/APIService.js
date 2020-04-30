@@ -1,5 +1,4 @@
 import axios from 'axios';
-import axios from 'axios';
 
 const api = `${process.env.VUE_APP_API_URL}`;
 console.log(`using api: ${api}`);
