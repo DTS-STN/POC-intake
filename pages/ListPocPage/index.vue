@@ -1,14 +1,14 @@
 <template>
 <div>
-    <Form />
+    <ListPoc />
 </div>
 </template>
 
 <script>
-import Form from "~/components/Form.vue";
+import ListPoc from "./ListPoc";
 export default {
     components: {
-        Form
+        ListPoc
     }
 };
 </script>

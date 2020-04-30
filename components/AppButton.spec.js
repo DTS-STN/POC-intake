@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
-import Button from '@/components/Button.vue'
+import Button from '@/components/AppButton.vue'
 
-describe('Button', () => {
+describe('AppButton', () => {
   test('is a Vue instance', () => {
     const wrapper = mount(Button)
     expect(wrapper.isVueInstance()).toBeTruthy()
