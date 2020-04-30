@@ -24,7 +24,7 @@ export default {
         about: 'À propos de Canada.ca',
         terms: 'Avis',
         privacy: 'Confidentialité',
-        dts: 'Solutions technologiques numériques',
+        dts: 'STN',
         symbol: 'Symbole du gouvernement du Canada'
     },
     Success: {

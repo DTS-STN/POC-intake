@@ -25,7 +25,8 @@ export default {
         about: 'About canada.ca',
         terms: 'Terms and conditions',
         privacy: 'Privacy',
-        dts: 'Digital Technology Solutions',
+        dts: 'DTS',
+        top: 'Top of Page',
         symbol: 'Symbol of the Government of Canada'
     },
     success2: {

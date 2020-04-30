@@ -29,7 +29,7 @@
 
     <hr class='clearfix' />
     
-    <nav class="flex items-center justify-between flex-wrap bg-white-500 p-6">
+    <!-- <nav class="flex items-center justify-between flex-wrap bg-white-500 p-6">
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <span class="font-semibold text-xl tracking-tight">Canada</span>
       </div>
@@ -39,11 +39,11 @@
             <a
               href="https://www.canada.ca/en/social.html"
               class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text- mr-4"
-            > {{ $t('footer.site') }} </a>
+            > {{ $t('footer.social') }} </a>
             <a
               href="https://www.canada.ca/en/mobile.html"
               class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            > {{ $t('footer.social') }} </a>
+            > {{ $t('footer.mobile') }} </a>
             <a
               href="https://www.canada.ca/en/government/about.html"
               class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
@@ -55,22 +55,22 @@
             <a
               href="https://home.dts-stn.com/index.html"
               class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            > {{ $t('footer.privacy') }} </a>
+            > {{ $t('footer.dts') }} </a>
             <a
               href="https://www.canada.ca/en/transparency/terms.html"
               class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            > {{ $t('footer.dts') }} </a>
+            > {{ $t('footer.privacy') }} </a>
           </div>
         </div>
       </ul>
 
-      <img width="50%" src="~/assets/img/canada_footer_logo.svg" :alt=" $t('footer.symbol') " :title=" $t('footer.symbol') "  />
+        <img width="50%" src="~/assets/img/canada_footer_logo.svg" :alt=" $t('footer.symbol') " :title=" $t('footer.symbol') "  />
 
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <img width="50%" src="~/assets/img/canada_footer_logo.svg" />
       </div>
 
-    </nav>
+    </nav> -->
   </div>
 </template>
 
