@@ -1,6 +1,6 @@
 import axios from 'axios';
-;
-const api = process.env.NODE_ENV=='production' ? "https://poc-intake.dev.dts-stn.com/api/" : "http://localhost:3000/api/";
+
+const api = process.env.VUE_APP_API_URL == undefined ? "http://localhost:3000/api/" : process.env.VUE_APP_API_URL;
 console.log( process.env.NODE_ENV );
 console.log(`using api: ${api}`);
 

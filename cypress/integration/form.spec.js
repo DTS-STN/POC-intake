@@ -33,7 +33,7 @@ describe('open to the form page', function() {
          //last name
          cy.get('[data-cy=ln-text-entry]').should('be.visible')
           // email
-        cy.get('[data-cy=email-entry]').should('be.visible')
+        cy.get('[data-cy=email-text-entry]').should('be.visible')
           // message
          cy.get('[data-cy=message-entry]').should('be.visible')
           // click the submit button
