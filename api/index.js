@@ -16,6 +16,11 @@ config.dev = process.env.NODE_ENV !== "production";
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json());
+app.use(
+  morgan("dev", {
+    skip: (req, _) => req.path.includes("_nuxt/")
+  })
+);
 app.use(cors());
 
 //get all pocs
