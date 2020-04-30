@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const morgan = require("morgan");
 const consola = require("consola");
 const { Nuxt, Builder } = require("nuxt");
 const app = express();
@@ -18,7 +19,7 @@ app.use(express.json());
 app.use(cors());
 
 //get all pocs
-app.use('/api/', require('./routes/poc'));
+app.use("/api/", require("./routes/poc"));
 
 //Tie Server to Nuxt
 async function start() {
@@ -38,13 +39,21 @@ async function start() {
   // Listen the server
   app.listen(port, host);
   consola.ready({
-    message: process.env.NODE_ENV == 'production' ? 'Server listening.....' : `http://${host}:${port}/en` ,
+    message:
+      process.env.NODE_ENV == "production"
+        ? "Server listening....."
+        : `http://${host}:${port}/en`,
     badge: true
   });
 }
 
 //build connection string with password
-var db=process.env.VUE_APP_CONNECTION_STRING ? process.env.VUE_APP_CONNECTION_STRING.replace('-password-', process.env.VUE_APP_POC_INTAKE_DB_PASSWORD) : 'empty connection string check environment vars';
+var db = process.env.VUE_APP_CONNECTION_STRING
+  ? process.env.VUE_APP_CONNECTION_STRING.replace(
+      "-password-",
+      process.env.VUE_APP_POC_INTAKE_DB_PASSWORD
+    )
+  : "empty connection string check environment vars";
 
 function connectDb() {
   mongoose.set("useCreateIndex", true);
