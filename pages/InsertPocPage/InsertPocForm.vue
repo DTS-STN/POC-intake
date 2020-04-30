@@ -6,11 +6,11 @@
             <ValidationObserver v-slot="{ handleSubmit }">
                 <form @submit.prevent="handleSubmit(onSubmit)">
                     <div class="flex flex-wrap -mx-3 mb-6">
-                        <InsertPocTextBox name="fname" rules="fname" v-model="poc.fname" type="text" labelfor="grid-first-name" :labeltext="$t('form.firstname')" validname="firstName" data_cy_label="fn-title" data_cy_validation="fn-error" data_cy_field="fn-text-entry" divclass="w-full md:w-1/2 px-3 mb-6 md:mb-0"/>
-                        <InsertPocTextBox name="lname" rules="lname" v-model="poc.lname" type="text" labelfor="grid-last-name" :labeltext="$t('form.lastname')" validname="lastName" data_cy_label="ln-title" data_cy_validation="ln-error" data_cy_field="ln-text-entry" divclass="w-full md:w-1/2 px-3 mb-6 md:mb-0"/>
+                        <InsertPocTextBox name="fn" rules="fname" v-model="poc.fname" type="text" :labeltext="$t('form.firstname')"  divclass="w-full md:w-1/2 px-3 mb-6 md:mb-0"/>
+                        <InsertPocTextBox name="ln" rules="lname" v-model="poc.lname" type="text" :labeltext="$t('form.lastname')"  divclass="w-full md:w-1/2 px-3 mb-6 md:mb-0"/>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
-                        <InsertPocTextBox name="email" rules="required|email" v-model="poc.email" type="text" labelfor="grid-email" :labeltext="$t('form.email')" validname="E-mail" data_cy_label="email-title" data_cy_validation="email-error" data_cy_field="email-entry" divclass="w-full px-3"/>
+                        <InsertPocTextBox name="email" rules="required|email" v-model="poc.email" type="text" :labeltext="$t('form.email')" divclass="w-full px-3"/>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3">
