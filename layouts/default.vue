@@ -33,6 +33,7 @@
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <span class="font-semibold text-xl tracking-tight">Canada</span>
       </div>
+      <span>{{ $t('footer.date') }}{{timestamp}}</span>
       <ul>
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
           <div class="text-sm lg:flex-grow">
@@ -76,12 +77,17 @@
 
 <script>
 
+import moment from 'moment'
+
 export default {
   computed:
    {
     availableLocales() {
       return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale);
     },
+    timestamp: function() {
+  return moment().format('YYYY-MM-DD');
+}
   },
 
 
