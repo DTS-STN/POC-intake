@@ -67,7 +67,10 @@ module.exports = {
       langDir: 'lang/',
       strategy: 'prefix_and_default',
       defaultLocale: 'en'
-    }]
+    }],
+    ['nuxt-env',
+      { keys: [ 'VUE_APP_API_URL'] }
+    ]
   ],
   /*
   ** Build configuration
