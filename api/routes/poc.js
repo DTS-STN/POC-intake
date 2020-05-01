@@ -20,12 +20,17 @@ router.get('/allpocs', function(req, res){
 // @access  Public
 
 router.post('/insertpoc', function(req, res){
+  // const savepoc = new Poc({
+  //   fname: `${req.query.fname}`,
+  //   lname: `${req.query.lname}`,
+  //   email: `${req.query.email}`,
+  //   message: `${req.query.message}`
+  // });
+  const { fname, lname, email, message } = req.body;
   const savepoc = new Poc({
-    fname: `${req.query.fname}`,
-    lname: `${req.query.lname}`,
-    email: `${req.query.email}`,
-    message: `${req.query.message}`
-  });
+      fname, lname, email, message
+    });
+
   savepoc.save()
     .then(poc => {res.status(200).json({'poc': 'your poc was saved'})})
     .catch(err => {
