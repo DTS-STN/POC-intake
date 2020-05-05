@@ -30,18 +30,11 @@
 </template>
 
 <script>
-import { ValidationProvider, ValidationObserver } from "vee-validate";
-import AppTitles from "~/components/AppTitles";
-import AppButton from "~/components/AppButton";
 import InsertPocTextBox from "./InsertPocTextBox";
 import APIService from "~/services/APIService";
 export default {
     name: "InsertPocForm",
     components: {
-        ValidationProvider,
-        ValidationObserver,
-        AppTitles,
-        AppButton,
         InsertPocTextBox
     },
     data: () => ({

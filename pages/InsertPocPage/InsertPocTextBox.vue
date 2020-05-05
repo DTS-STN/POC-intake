@@ -9,12 +9,8 @@
 </template>
 
 <script>
-import { ValidationProvider } from "vee-validate";
 export default {
     name: "InsertPocTextBox",
-    props: ["name", "rules", "value", "type", "labeltext", "divclass"],
-    components: {
-        ValidationProvider
-    }
+    props: ["name", "rules", "value", "type", "labeltext", "divclass"]
 };
 </script>
