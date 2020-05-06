@@ -29,7 +29,7 @@
 <script>
 import APIService from '../../services/APIService';
 export default {
-    name: "ListPoc",
+    name: "ListPocPage",
     data: () => ({
       allPOC: null
     }),
