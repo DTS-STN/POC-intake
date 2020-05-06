@@ -41,7 +41,7 @@
         </AppFormControl>
       </div>
       <div class="w-full px-3">
-        <AppButton text="submit" data-_cy="submit-button" />
+        <AppButton text="submit" data_cy="submit-button" />
       </div>
     </BaseForm>
   </BasePage>
