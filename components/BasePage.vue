@@ -13,7 +13,7 @@
 <script>
 export default {
   name: "BasePage",
-  props: [ 'title', 'subtitle' ]
+  props: [ 'title', 'subtitle', 'form' ]
 };
 </script>
 
