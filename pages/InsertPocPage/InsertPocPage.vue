@@ -59,7 +59,6 @@ export default {
   methods: {
     async onSubmit() {
       let confirm = await APIService.insertPoc(
-        `${this.$env.VUE_APP_API_URL}`,
         this.poc.fname,
         this.poc.lname,
         this.poc.email,
