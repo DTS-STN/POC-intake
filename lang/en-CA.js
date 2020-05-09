@@ -19,6 +19,7 @@ export default {
         link: 'https://www.canada.ca/en.html'
     },
     footer: {
+        date: 'Date last modified:',
         site: 'About this site',
         social: 'Social media',
         mobile: 'Mobile applications',

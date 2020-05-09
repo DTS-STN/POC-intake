@@ -12,8 +12,9 @@
             </p>
             <div></div>
         </div>
-
-        <nuxt-link class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-500 hover:bg-indigo-600 rounded shadow" v-for="locale in availableLocales" :key="locale.code" :to="(locale.code) + '/InsertPocPage'" data-cy="start-button">{{ $t('getstarted') }}</nuxt-link>
+        <nuxt-link class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-500 hover:bg-indigo-600 rounded shadow" v-for="locale in availableLocales" :key="locale.code" :to="(locale.code) + '/InsertPocPage'" data-cy="start-button">
+            {{ $t('getstarted') }}
+        </nuxt-link>
         <h2 class="subtitle"></h2>
     </div>
 </div>

@@ -16,14 +16,14 @@ extend("email", {
   message: "Please enter a correct email format"
 });
 
-// extend("email", {
-//   ...required,
-//   message: "email is required"
-// });
-
 extend("fname", {
   ...required,
   message: "please input your first name"
+});
+
+extend("message", {
+  ...required,
+  message: "please input your message"
 });
 
 extend("lname", {

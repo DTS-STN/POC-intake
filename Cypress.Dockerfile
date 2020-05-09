@@ -6,6 +6,6 @@ COPY cypress ./cypress
 COPY package.json .
 COPY cypress.json .
 RUN CI=true
-RUN npm install cypress cypress-axe axe-core
+RUN npm ci cypress cypress-axe axe-core
 RUN npx cypress verify
 CMD ["npm", "run", "cypress"]
