@@ -1,14 +1,14 @@
 <template>
 <div>
-    <ListPoc />
+    <ListPocPage />
 </div>
 </template>
 
 <script>
-import ListPoc from "./ListPoc";
+import ListPocPage from "./ListPocPage";
 export default {
     components: {
-        ListPoc
+        ListPocPage
     }
 };
 </script>

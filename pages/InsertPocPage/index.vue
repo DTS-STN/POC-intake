@@ -1,14 +1,14 @@
 <template>
 <div>
-    <InsertPocForm />
+    <InsertPocPage />
 </div>
 </template>
 
 <script>
-import InsertPocForm from "./InsertPocForm";
+import InsertPocPage from "./InsertPocPage";
 export default {
     components: {
-        InsertPocForm
+        InsertPocPage
     }
 };
 </script>

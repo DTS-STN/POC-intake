@@ -29,11 +29,11 @@
 <script>
 import APIService from '../../services/APIService';
 export default {
-    name: "ListPoc",
+    name: "ListPocPage",
     data: () => ({
       allPOC: null
     }),
-    created() {  APIService.getAllPocs(`${this.$env.VUE_APP_API_URL}`).then( res => this.allPOC=res.data ); }
+    created() {  APIService.getAllPocs().then( res => this.allPOC=res.data ); }
 }
 </script>
 

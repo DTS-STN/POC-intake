@@ -1,6 +1,5 @@
-const express = require("express");
-const router = express.Router();
-
+var express = require("express");
+var app = express();
 const Poc = require('../models/poc');
 
 
@@ -8,18 +7,17 @@ const Poc = require('../models/poc');
 // @desc    Gets all existing PoC's in database
 // @access  Public
 
-router.get('/allpocs', function(req, res){
+app.get('/allpocs', function(req, res){
     Poc
     .find((err, poc) => { res.json(poc);})
     .catch(err => { console.log( err ) });
 });
 
-
 // @route   POST api/insertpoc
 // @desc    Saves our form data
 // @access  Public
 
-router.post('/insertpoc', function(req, res){
+app.post('/insertpoc', function(req, res){
   const savepoc = new Poc({
     fname: `${req.query.fname}`,
     lname: `${req.query.lname}`,
@@ -27,11 +25,11 @@ router.post('/insertpoc', function(req, res){
     message: `${req.query.message}`
   });
   savepoc.save()
-    .then(poc => {res.status(200).json({'poc': 'your poc was saved'})})
+    .then( () => {res.status(200).json({'poc': 'your poc was saved'})})
     .catch(err => {
       res.status(400).send("unable to save to database");
       console.log(err);
     });
 });
 
-module.exports = router;
+module.exports = {path: "/api/", handler: app};

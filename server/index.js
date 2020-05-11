@@ -23,8 +23,6 @@ app.use(
 );
 app.use(cors());
 
-//get all pocs
-app.use("/api/", require("./routes/poc"));
 
 //Tie Server to Nuxt
 async function start() {
