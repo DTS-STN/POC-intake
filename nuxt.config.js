@@ -23,7 +23,7 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#ff9897' },
+  loading: { color: '#39b982' },
   /*
    ** Global CSS
    */
@@ -44,7 +44,7 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/dotenv',
-    //"@nuxtjs/auth",
+    //'@nuxtjs/auth',
     '@nuxtjs/axios'
   ],
   /*
@@ -75,6 +75,13 @@ module.exports = {
       }
     ]
   ],
+  /*
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {
+    // API_URL: process.env.npm_package_description || 'http://localhost:3000/api/'
+  },
   /*
    ** Build configuration
    */

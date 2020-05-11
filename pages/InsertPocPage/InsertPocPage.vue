@@ -41,19 +41,19 @@
         </AppFormControl>
       </div>
       <div class="w-full px-3">
-        <AppButton text="submit" data_cy="submit-button" />
+        <AppButton data_cy="submit-button">submit</AppButton>
       </div>
     </BaseForm>
   </BasePage>
 </template>
 
 <script>
-import APIService from "@/services/APIService";
+import APIService from '@/services/APIService'
 export default {
-  name: "InsertPocPage",
+  name: 'InsertPocPage',
   data: () => ({
     poc: [],
-    err: "",
+    err: '',
     resSub: null
   }),
   methods: {
@@ -65,15 +65,15 @@ export default {
         this.poc.message
       )
         .then(() => {
-          this.$router.push("success");
+          this.$router.push('success')
         })
         .catch(error => {
-          console.log(error);
-          this.$router.push("error");
-        });
+          console.log(error)
+          this.$router.push('error')
+        })
     }
   }
-};
+}
 </script>
 
 <style>
