@@ -1,30 +1,29 @@
-
 module.exports = {
-  mode: "universal",
-  serverMiddleware: ["~/api/routes/index"],
+  mode: 'universal',
+  serverMiddleware: ['~/api/routes/index'],
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || "",
+    title: process.env.npm_package_name || '',
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: "description",
-        name: "description",
-        content: process.env.npm_package_description || ""
+        hid: 'description',
+        name: 'description',
+        content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     htmlAttrs: {
-      lang: "en"
+      lang: 'en'
     }
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#fff" },
+  loading: { color: '#ff9897' },
   /*
    ** Global CSS
    */
@@ -33,9 +32,9 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    "~/plugins/vee-validate",
+    '~/plugins/vee-validate',
     {
-      src: "~/plugins/global.js"
+      src: '~/plugins/global.js'
     }
   ],
   /*
@@ -43,36 +42,36 @@ module.exports = {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/dotenv",
-    "@nuxtjs/auth",
-    "@nuxtjs/axios"
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/dotenv',
+    //"@nuxtjs/auth",
+    '@nuxtjs/axios'
   ],
   /*
    ** Nuxt.js modules
    */
   modules: [
     [
-      "nuxt-i18n",
+      'nuxt-i18n',
       {
         locales: [
           {
-            name: "Français",
-            code: "fr",
-            iso: "fr-FR",
-            file: "fr-FR.js"
+            name: 'Français',
+            code: 'fr',
+            iso: 'fr-FR',
+            file: 'fr-FR.js'
           },
           {
-            name: "English",
-            code: "en",
-            iso: "en-CA",
-            file: "en-CA.js"
+            name: 'English',
+            code: 'en',
+            iso: 'en-CA',
+            file: 'en-CA.js'
           }
         ],
         lazy: true,
-        langDir: "lang/",
-        strategy: "prefix_and_default",
-        defaultLocale: "en"
+        langDir: 'lang/',
+        strategy: 'prefix_and_default',
+        defaultLocale: 'en'
       }
     ]
   ],
@@ -80,10 +79,10 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    transpile: ["vee-validate/dist/rules"],
+    transpile: ['vee-validate/dist/rules'],
     /*
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
   }
-};
+}

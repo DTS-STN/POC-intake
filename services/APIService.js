@@ -1,12 +1,22 @@
-import axios from 'axios';
+import axios from 'axios'
 
-class APIService{
-  static insertPoc( fname, lname, email, message){
-    return axios.post(`/api/insertpoc`, null, { params: {fname: fname, lname: lname, email: email, message: message} });
+const apiClient = axios.create({
+  baseURL: `http://localhost:3000/api/`,
+  withCredentials: false,
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
   }
+})
 
-  static getAllPocs() {
-    return axios.get(`/api/allpocs`);
-   }
+export default {
+  insertPoc(fname, lname, email, message) {
+    return apiClient.post(`insertpoc`, null, {
+      params: { fname, lname, email, message }
+    })
+  },
+
+  getPocs() {
+    return apiClient.get('allpocs')
+  }
 }
-export default APIService;
