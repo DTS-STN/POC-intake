@@ -45,4 +45,4 @@ npm run database
 npm run dbimport
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org)...
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
