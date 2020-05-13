@@ -5,7 +5,6 @@ const Poc = require("../models/poc");
 // @route   GET api/allpocs
 // @desc    Gets all existing PoC's in database
 // @access  Public
-
 app.get("/allpocs", function(req, res) {
   Poc.find((err, poc) => {
     res.json(poc);
@@ -17,7 +16,6 @@ app.get("/allpocs", function(req, res) {
 // @route   POST api/insertpoc
 // @desc    Saves our form data
 // @access  Public
-
 app.post("/insertpoc", function(req, res) {
   const savepoc = new Poc({
     fname: `${req.query.fname}`,

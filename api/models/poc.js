@@ -26,7 +26,7 @@ const pocSchema = new mongoose.Schema(
       type: String,
       validate: {
         validator: function(v) {
-          return v === "a";
+          return v === "a@b.com";
         },
         message: props => `${props.value} is not a valid email format`
       }
@@ -36,7 +36,7 @@ const pocSchema = new mongoose.Schema(
       type: String,
       validate: {
         validator: function(v) {
-          return v === "a@b.com";
+          return v === "a";
         },
         message: props => `${props.value} is not a valid email format`
       }

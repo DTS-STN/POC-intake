@@ -54,28 +54,30 @@ import APIService from "@/services/APIService";
 export default {
   name: "InsertPocPage",
   data: () => ({
-    poc: [],
-    err: "",
-    servererrors: null,
-    resSub: null
+    poc: [{ fname: null }, { lname: null }, { email: null }, { message: null }]
   }),
   methods: {
     async onSubmit() {
-      let confirm = await APIService.insertPoc(
-        this.poc.fname,
-        this.poc.lname,
-        this.poc.email,
-        this.poc.message
-      )
+      let confirm = await APIService.insertPoc(this.poc)
         .then(response => {
           //looks for server side validation errors
           if (response.data.errors) {
             var sserrs = response.data.errors;
             this.$refs.form.setErrors({
-              fname: [sserrs.fname ? sserrs.fname.message : ""],
-              lname: [sserrs.lname ? sserrs.lname.message : ""],
-              email: [sserrs.email ? sserrs.email.message : ""],
-              message: [sserrs.message.message ? sserrs.message.message : ""]
+              fname: [
+                sserrs.fname ? this.$t("server_validation_messages.fname") : ""
+              ],
+              lname: [
+                sserrs.lname ? this.$t("server_validation_messages.lname") : ""
+              ],
+              email: [
+                sserrs.email ? this.$t("server_validation_messages.email") : ""
+              ],
+              message: [
+                sserrs.message
+                  ? this.$t("server_validation_messages.message")
+                  : ""
+              ]
             });
             return;
           }

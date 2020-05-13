@@ -33,5 +33,11 @@ export default {
   },
   list: {
     title: "Liste de tous les POC"
+  },
+  server_validation_messages: {
+    fname: "french: invalid first name (server side)",
+    lname: "french: invalid last name (server side)",
+    email: "french: invalid email (server side)",
+    message: "french: invalid message (server side)"
   }
 };
