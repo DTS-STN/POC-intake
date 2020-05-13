@@ -8,7 +8,7 @@
     <ValidationProvider
       tag="div"
       :rules="rules"
-      :name="name + '-val'"
+      :name="name"
       :data-cy="name +'-error'"
       v-slot="{ errors }"
     >
