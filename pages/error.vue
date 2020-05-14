@@ -1,7 +1,7 @@
 <template>
 <div class="container">
     <div>
-        <h1 class="title">{{ $t('Success.thankyou') }}</h1>
+        <h1 class="title">ERROR PAGE!!!</h1>
 
         <div class="w-full max-w-2xl mx-auto">
             <p class="mb-8 text-gray-500 leading-relaxed">
