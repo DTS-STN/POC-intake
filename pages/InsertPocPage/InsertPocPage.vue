@@ -9,7 +9,7 @@
             divclass="w-full md:w-1/2 px-3 mb-6 md:mb-0"
             :labeltext="$t('form.firstname')"
           >
-            <AppTextBox name="fn" v-model="poc.fname" type="text" />
+            <AppTextBox name="fname" v-model="poc.fname" type="text" />
           </AppFormControl>
 
           <AppFormControl
@@ -18,7 +18,7 @@
             divclass="w-full md:w-1/2 px-3 mb-6 md:mb-0"
             :labeltext="$t('form.lastname')"
           >
-            <AppTextBox name="ln" v-model="poc.lname" type="text" />
+            <AppTextBox name="lname" v-model="poc.lname" type="text" />
           </AppFormControl>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -42,7 +42,7 @@
           </AppFormControl>
         </div>
         <div class="w-full px-3">
-          <AppButton text="submit" data-_cy="submit-button" />
+          <AppButton text="submit" data-cy="submit-button" />
         </div>
       </form>
     </ValidationObserver>
