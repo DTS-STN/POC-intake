@@ -42,7 +42,7 @@
           </AppFormControl>
         </div>
         <div class="w-full px-3">
-          <AppButton text="submit" data-cy="submit-button" />
+          <AppButton text="submit" data-cy="submit-button"> Submit </AppButton>
         </div>
       </form>
     </ValidationObserver>
@@ -50,9 +50,9 @@
 </template>
 
 <script>
-import APIService from "@/services/APIService";
+import APIService from '@/services/APIService'
 export default {
-  name: "InsertPocPage",
+  name: 'InsertPocPage',
   data: () => ({
     poc: [{ fname: null }, { lname: null }, { email: null }, { message: null }]
   }),
@@ -62,33 +62,34 @@ export default {
         .then(response => {
           //looks for server side validation errors
           if (response.data.errors) {
-            var sserrs = response.data.errors;
+            var sserrs = response.data.errors
+            console.log(sserrs)
             this.$refs.form.setErrors({
               fname: [
-                sserrs.fname ? this.$t("server_validation_messages.fname") : ""
+                sserrs.fname ? this.$t('server_validation_messages.fname') : ''
               ],
               lname: [
-                sserrs.lname ? this.$t("server_validation_messages.lname") : ""
+                sserrs.lname ? this.$t('server_validation_messages.lname') : ''
               ],
               email: [
-                sserrs.email ? this.$t("server_validation_messages.email") : ""
+                sserrs.email ? this.$t('server_validation_messages.email') : ''
               ],
               message: [
                 sserrs.message
-                  ? this.$t("server_validation_messages.message")
-                  : ""
+                  ? this.$t('server_validation_messages.message')
+                  : ''
               ]
-            });
-            return;
+            })
+            return
           }
-          this.$router.push("success");
+          this.$router.push('success')
         })
         .catch(err => {
-          this.$router.push("error");
-        });
+          this.$router.push('error')
+        })
     }
   }
-};
+}
 </script>
 
 <style>

@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios'
 
 class APIService {
   static insertPoc(poc) {
@@ -9,11 +9,11 @@ class APIService {
         email: poc.email,
         message: poc.message
       }
-    });
+    })
   }
 
   static getAllPocs() {
-    return axios.get(`/api/allpocs`);
+    return axios.get(`/api/allpocs`)
   }
 }
-export default APIService;
+export default APIService
