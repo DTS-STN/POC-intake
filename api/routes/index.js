@@ -20,10 +20,14 @@ app.get('/allpocs', function(req, res) {
 
 app.post('/insertpoc', function(req, res) {
   const savepoc = new Poc({
-    fname,
-    lname,
-    email,
-    message
+    fname: req.body.fname,
+    lname: req.body.lname,
+    email: req.body.email,
+    message: req.body.message
+    // fname: `${req.query.fname}`,
+    // lname: `${req.query.lname}`,
+    // email: `${req.query.email}`,
+    // message: `${req.query.message}`
   })
 
   savepoc
