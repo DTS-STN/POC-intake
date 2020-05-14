@@ -1,4 +1,4 @@
-import APIService from '../services/APIService.js'
+import APIService from '@/services/APIService'
 
 export const state = () => ({
   pocs: [],
@@ -16,7 +16,7 @@ export const mutations = {
 
 export const actions = {
   fetchPocs({ commit }) {
-    return APIService.getPocs().then(response => {
+    return APIService.getAllPocs().then(response => {
       commit('SET_POCS', response.data)
     })
   }

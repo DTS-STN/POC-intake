@@ -13,7 +13,7 @@ class APIService {
   }
 
   static getAllPocs() {
-    return axios.get(`/api/allpocs`)
+    return axios.get(`http://localhost:3000/api/allpocs`)
   }
 }
 export default APIService
