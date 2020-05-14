@@ -7,8 +7,7 @@ const pocSchema = new mongoose.Schema(
       validate: {
         validator: function(v) {
           return v === "a";
-        },
-        message: props => `${props.value} is not a valid first name format`
+        }
       }
     },
 
@@ -17,8 +16,7 @@ const pocSchema = new mongoose.Schema(
       validate: {
         validator: function(v) {
           return v === "a";
-        },
-        message: props => `${props.value} is not a valid last name format`
+        }
       }
     },
 
@@ -27,8 +25,7 @@ const pocSchema = new mongoose.Schema(
       validate: {
         validator: function(v) {
           return v === "a@b.com";
-        },
-        message: props => `${props.value} is not a valid email format`
+        }
       }
     },
 
@@ -37,8 +34,7 @@ const pocSchema = new mongoose.Schema(
       validate: {
         validator: function(v) {
           return v === "a";
-        },
-        message: props => `${props.value} is not a valid email format`
+        }
       }
     }
   },
