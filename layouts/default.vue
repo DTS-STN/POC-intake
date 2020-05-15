@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="flex items-center justify-between flex-wrap bg-white-500 p-6">
+    <nav id="nav-top-page" class="flex items-center justify-between flex-wrap bg-white-500 p-6">
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         
         <div v-if="this.$i18n.locale === 'en'" class="text-sm lg:flex-grow">
@@ -28,56 +28,19 @@
 
 
     <hr class='clearfix' />
-    
-    <nav class="flex items-center justify-between flex-wrap bg-white-500 p-6">
-      <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <span class="font-semibold text-xl tracking-tight">Canada</span>
-      </div>
-      <span>{{ $t('footer.date') }}{{timestamp}}</span>
-      <ul>
-        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div class="text-sm lg:flex-grow">
-            <a
-              href="https://www.canada.ca/en/social.html"
-              class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text- mr-4"
-            > {{ $t('footer.social') }} </a>
-            <a
-              href="https://www.canada.ca/en/mobile.html"
-              class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            > {{ $t('footer.mobile') }} </a>
-            <a
-              href="https://www.canada.ca/en/government/about.html"
-              class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            > {{ $t('footer.about') }} </a>
-            <a
-              href="https://www.canada.ca/en/transparency/terms.html"
-              class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            > {{ $t('footer.terms') }} </a>
-            <a
-              href="https://home.dts-stn.com/index.html"
-              class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            > {{ $t('footer.dts') }} </a>
-            <a
-              href="https://www.canada.ca/en/transparency/terms.html"
-              class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            > {{ $t('footer.privacy') }} </a>
-          </div>
-        </div>
-      </ul>
-
-      <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <img width="50%" src="~/assets/img/canada_footer_logo.svg" :alt=" $t('footer.symbol') " :title=" $t('footer.symbol') "  />
-      </div>
-
-    </nav>
+    <AppFooter />
+   
   </div>
 </template>
 
 <script>
 
 import moment from 'moment'
-
+import AppFooter from '../components/AppFooter'
 export default {
+  components:{
+    AppFooter
+  },
   computed:
    {
     availableLocales() {

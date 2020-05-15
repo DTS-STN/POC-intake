@@ -22,15 +22,15 @@
     -->
     </div> 
 
-    <div class="brand bg-blue-600">
-      <div class="container" style="background-color: cyan; ">
-        <div class="row" style="background-color: pink">
+    <div class="brand">
+      <div class="container">
+        <div class="row">
 
-          <nav class="col-md-10 ftr-urlt-lnk" style="background-color: gold"> 
+          <nav class="col-md-10 ftr-urlt-lnk" > 
 
-            <h2 class="wb-inv" style="background-color: gray; clip: rect(1px,1px,1px,1px); height: 1px; margin: 0; overflow: hidden; position: absolute; width: 1px;"> {{ $t('footer.site') }} </h2>
+            <h2 class="wb-inv" style="clip: rect(1px,1px,1px,1px); height: 1px; margin: 0; overflow: hidden; position: absolute; width: 1px;"> {{ $t('footer.site') }} </h2>
 
-            <ul style="background-color:greenyellow">
+            <ul>
               <li><a href="https://www.canada.ca/en/social.html"> {{ $t('footer.social') }} </a></li>
               <li><a href="https://www.canada.ca/en/mobile.html"> {{ $t('footer.mobile') }} </a></li>
               <li><a href="https://www.canada.ca/en/government/about.html"> {{ $t('footer.about') }} </a></li>
@@ -40,8 +40,8 @@
             </ul>
           </nav>
 
-          <div class="col-xs-6 visible-sm visible-xs tofpg   hidden  md:visible " style="background-color: yellow; line-height: 90px;">
-            <a href="#wb-cont"> {{ $t('footer.top') }} <span class="glyphicon glyphicon-chevron-up"></span></a>
+          <div class="col-xs-6 visible-sm visible-xs tofpg   hidden  md:visible " style=" line-height: 90px;">
+            <a href="#nav-top-page"> {{ $t('footer.top') }} <span class="glyphicon glyphicon-chevron-up"></span></a>
           </div>
 
           <div class="col-xs-6 col-md-2 text-right">
@@ -65,7 +65,6 @@
 </script>
 
 <style>
-
 #wb-info .landscape {
   background: #26374a url(../assets/img/landscape.png) no-repeat right bottom;
   height: 180.5px;
@@ -76,6 +75,7 @@
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  min-height: 0 !important;
 } 
 .container::after { clear: both; }
 .container::before, .container::after {
@@ -106,12 +106,12 @@
   .col-md-10 { float: left; width: 83.3333333333%; }
 }
 .ftr-urlt-lnk {
-  background-color: violet; box-sizing: border-box; 
+  box-sizing: border-box; 
 }
 #wb-info .brand {
   background: #f8f8f8;
   line-height: 30px;
-  @apply bg-blue-600;
+  
 }
 #wb-info .brand img {
   height: 40px;
@@ -120,7 +120,7 @@
   width: auto;
 }
 #wb-info nav {
-  padding-bottom: 2em;
+  padding-bottom: 1em;
   padding-top: 2em;
   position: relative;
 }
