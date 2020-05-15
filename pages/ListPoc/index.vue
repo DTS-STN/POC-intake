@@ -2,12 +2,7 @@
   <div>
     <h2 class="subtitle">{{ $t('list.title') }}</h2>
 
-    <PocData
-      v-for="(poc, index) in pocs"
-      :key="index"
-      :poc="poc"
-      :data-index="index"
-    />
+    <PocData v-for="(poc, index) in pocs" :key="index" :poc="poc" :data-index="index" />
   </div>
 </template>
 
@@ -19,22 +14,14 @@ export default {
   components: {
     PocData
   },
-
-  async fetch({ store, error }) {
-    try {
-      await store.dispatch('pocs/fetchPocs')
-    } catch (e) {
-      // error({
-      //   statusCode: 503,
-      //   message: 'Unable to fetch events at this time. Please try again.'
-      // })
-      console.log(e)
-    }
+  
+  async created(){
+    this.$store.dispatch('pocs/fetchPocs')
   },
 
-  computed: mapState({
-    pocs: state => state.pocs.pocs
-  }),
+  computed: {
+    ...mapState('pocs', ['pocs'])
+  },
 
   head() {
     return {
