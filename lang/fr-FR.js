@@ -26,7 +26,8 @@ export default {
     terms: 'Avis',
     privacy: 'Confidentialité',
     dts: 'Solutions technologiques numériques',
-    symbol: 'Symbole du gouvernement du Canada'
+    symbol: 'Symbole du gouvernement du Canada',
+    top: 'Haut de page'
   },
   Success: {
     thankyou: 'Merci pour votre candidature'
