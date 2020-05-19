@@ -13,7 +13,7 @@
 <script>
 
 import moment from 'moment'
-import AppFooter from '../components/AppFooter'
+import AppFooter from '../components/Footer/AppFooter'
 import AppHeader from '../components/AppHeader'
 export default {
   components:{
