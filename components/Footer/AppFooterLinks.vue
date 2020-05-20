@@ -3,7 +3,7 @@
       <div class="container-links">
         <div class="row" >
 
-          <nav class="col-md-10 ftr-urlt-lnk" > 
+          <nav id="footer-nav" class="col-md-10 ftr-urlt-lnk" > 
 
             <!-- <h2 class="wb-inv" style="background-color: gray; clip: rect(1px,1px,1px,1px); height: 1px; margin: 0; overflow: hidden; position: absolute; width: 1px;"> {{ $t('footer.site') }}</h2> -->
 
@@ -16,7 +16,7 @@
               <li><a href="https://home.dts-stn.com/start.html"> {{ $t('footer.dts') }} </a></li>
             </ul>
           </nav>
-
+          
           <div class="col-xs-6 visible-sm visible-xs tofpg   hidden  md:visible " style="line-height: 90px;">
             <a href="#nav-top-page"> {{ $t('footer.top') }} <span class="glyphicon glyphicon-chevron-up"></span></a>
           </div>
@@ -83,8 +83,9 @@ export default {
   margin-top: 20px;
   width: auto;
 }
-#wb-info nav {
-  padding: 2em auto 0 auto;
+#wb-info #footer-nav {
+  padding-top: 2em;
+  padding-bottom: 2em;
   position: relative;
 }
 #wb-info .ftr-urlt-lnk li::before {
@@ -93,7 +94,8 @@ export default {
 }
 #fLinks {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto;
+  column-gap: 2em;
   margin-top: 0;
   margin-bottom: 11.5px;
   font-size: 14px;
@@ -115,10 +117,10 @@ export default {
   content: "^"; 
 }
 
-@media   (max-width: 479px) {
+@media   (min-width: 480px) {
   #wb-info .ftr-urlt-lnk #fLinks {
-    -webkit-column-count: 1;
-    column-count: 1;
+
+    grid-template-columns: auto auto;
     
   }
   #wb-info .ftr-urlt-lnk li {
@@ -127,10 +129,10 @@ export default {
     margin-bottom: .2em;
   }
   #wb-info .brand object, #wb-info .brand img {
-    height: 25px;
+    /* height: 25px;
     margin-top: 15px;
     max-width: 100%;
-    padding-right: 10px; 
+    padding-right: 10px;  */
   }
   #wb-info .tofpg {
     line-height: 60px; }
@@ -155,30 +157,20 @@ export default {
   #wb-info .brand img { float: right; }
 } 
 
-@media screen and (min-width: 1025px) {
-  /* #wb-info .ftr-urlt-lnk li {
-    display: inline-block;
-    margin-right: 0.7em; 
-  }
-  #wb-info .ftr-urlt-lnk li:first-child:before {
-    content: none; 
-  }
-  [dir=rtl] #wb-info .ftr-urlt-lnk li {
-    float: right; 
-  } */
+@media screen and (min-width: 1030px) {
   #fLinks{
    display: flex;
    align-content: flex-start;
    justify-content: space-evenly;   
   }
-  #wb-info nav {
-    padding: 0 !important;
-  }
-  li::before{
-    content: none !important;
-  }
+  #wb-info #footer-nav {
+    padding: 2em 0;
+  } 
 }
-
+@media (min-width: 1030px) and (max-width: 1200px) { 
+  li::before{
+    content: '' !important;
+  } }
 @media (min-width:  768px) { .container-links { width:  750px; } }
 @media (min-width:  992px) { .container-links { width:  970px; } }
 @media (min-width: 1200px) { .container-links { width: 1170px; } }

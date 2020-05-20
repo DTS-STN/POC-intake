@@ -27,7 +27,7 @@ export default {
     privacy: 'Privacy',
     dts: 'Digital Technology Solutions',
     symbol: 'Symbol of the Government of Canada',
-    top: 'Go to top'
+    top: 'Top of page'
   },
   Success: {
     thankyou: 'Thank you for your application'
