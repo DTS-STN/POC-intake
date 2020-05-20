@@ -45,18 +45,12 @@ export default {
   margin-left: auto;
 } 
 .container-links::after { clear: both; }
-.container-links::before, .container-links::after {
-  display: table;
-  content: " ";
-}
+
 .row {
   margin-right: -15px;
   margin-left: -15px;
 }
-.row::before, .row::after {
-  display: table;
-  content: " ";
-}
+
 .row::after {
   clear: both;
 }
@@ -90,7 +84,6 @@ export default {
 }
 #wb-info .ftr-urlt-lnk li::before {
 	content: "•";
-	margin-right: .7em;
 }
 #fLinks {
   display: grid;
@@ -127,12 +120,6 @@ export default {
     display: block;
     float: none;
     margin-bottom: .2em;
-  }
-  #wb-info .brand object, #wb-info .brand img {
-    /* height: 25px;
-    margin-top: 15px;
-    max-width: 100%;
-    padding-right: 10px;  */
   }
   #wb-info .tofpg {
     line-height: 60px; }

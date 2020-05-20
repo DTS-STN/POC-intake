@@ -8,7 +8,7 @@
         </div>
         <div v-else class="text-sm lg:flex-grow" >
             <a :alt=" $t('header.linkAlt') " :href=" $t('header.link') ">
-            <img :alt=" $t('header.logoAlt') " width="25%" src="~/assets/img/canadaFr.svg" />  </a>
+            <img :alt=" $t('header.logoAlt') " width="25%" src="~/assets/img/canadaFr.svg" /> </a>
         </div>
         
         <div>
