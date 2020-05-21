@@ -1,94 +1,25 @@
 <template>
   <div>
-    <nav class="flex items-center justify-between flex-wrap bg-white-500 p-6">
-      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        
-        <div v-if="this.$i18n.locale === 'en'" class="text-sm lg:flex-grow">
-          <a :alt=" $t('header.linkAlt') " :href=" $t('header.link') ">  
-          <img :alt=" $t('header.logoAlt') " width="25%" src="~/assets/img/canada_header.svg" /> </a>
-        </div>
-        <div v-else class="text-sm lg:flex-grow" >
-            <a :alt=" $t('header.linkAlt') " :href=" $t('header.link') ">
-            <img :alt=" $t('header.logoAlt') " width="25%" src="~/assets/img/canadaFr.svg" />  </a>
-        </div>
-        
-        <div>
-          <h1 class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"></h1>
-          <nuxt-link
-          v-for="locale in availableLocales"
-          :key="locale.code"
-          :to="switchLocalePath(locale.code)"
-          >{{ locale.name }}</nuxt-link>
-        </div>
-      </div>
-    </nav>
-
+    <AppHeader />
 
     <nuxt />
-
-
+  
     <hr class='clearfix' />
-    
-    <nav class="flex items-center justify-between flex-wrap bg-white-500 p-6">
-      <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <span class="font-semibold text-xl tracking-tight">Canada</span>
-      </div>
-      <span>{{ $t('footer.date') }}{{timestamp}}</span>
-      <ul>
-        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div class="text-sm lg:flex-grow">
-            <a
-              href="https://www.canada.ca/en/social.html"
-              class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text- mr-4"
-            > {{ $t('footer.social') }} </a>
-            <a
-              href="https://www.canada.ca/en/mobile.html"
-              class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            > {{ $t('footer.mobile') }} </a>
-            <a
-              href="https://www.canada.ca/en/government/about.html"
-              class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            > {{ $t('footer.about') }} </a>
-            <a
-              href="https://www.canada.ca/en/transparency/terms.html"
-              class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            > {{ $t('footer.terms') }} </a>
-            <a
-              href="https://home.dts-stn.com/index.html"
-              class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            > {{ $t('footer.dts') }} </a>
-            <a
-              href="https://www.canada.ca/en/transparency/terms.html"
-              class="block mt-4 lg:inline-block lg:mt-0 text-darkblue-200 hover:text-black mr-4"
-            > {{ $t('footer.privacy') }} </a>
-          </div>
-        </div>
-      </ul>
-
-      <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <img width="50%" src="~/assets/img/canada_footer_logo.svg" :alt=" $t('footer.symbol') " :title=" $t('footer.symbol') "  />
-      </div>
-
-    </nav>
+    <AppFooter />
+   
   </div>
 </template>
 
 <script>
 
 import moment from 'moment'
-
+import AppFooter from '../components/Footer/AppFooter'
+import AppHeader from '../components/AppHeader'
 export default {
-  computed:
-   {
-    availableLocales() {
-      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale);
-    },
-    timestamp: function() {
-  return moment().format('YYYY-MM-DD');
-}
-  },
-
-
+  components:{
+    AppFooter,
+    AppHeader
+  }
 };
 </script>
 
@@ -104,13 +35,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
 }
 
 .button--green {
