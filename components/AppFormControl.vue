@@ -1,10 +1,6 @@
 <template>
   <div :class="divclass">
-    <label
-      class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-      :for="name"
-      :data-cy="name + '-title'"
-    >{{labeltext}}</label>
+    <label class="formControlStyle" :for="name" :data-cy="name + '-title'">{{labeltext}}</label>
     <ValidationProvider
       tag="div"
       :rules="rules"
@@ -20,7 +16,19 @@
 
 <script>
 export default {
-  name: "AppFormControl",
-  props: ["name", "rules", "divclass", "labeltext"]
-};
+  name: 'AppFormControl',
+  props: ['name', 'rules', 'divclass', 'labeltext']
+}
 </script>
+
+<style >
+.formControlStyle {
+  @apply block;
+  @apply uppercase;
+  @apply tracking-wide;
+  @apply text-gray-700;
+  @apply text-xs;
+  @apply font-bold;
+  @apply mb-2;
+}
+</style>
