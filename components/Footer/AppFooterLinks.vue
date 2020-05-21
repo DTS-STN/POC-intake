@@ -111,7 +111,7 @@ export default {
   content: "^"; 
 }
 
-@media (min-width: 350px) {
+@media (min-width: 412px) {
   #fLinks{
     grid-template-columns: auto auto;
   }
