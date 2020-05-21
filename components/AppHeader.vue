@@ -1,23 +1,24 @@
 <template>
-  <nav id="nav-top-page" class="flex items-center justify-between flex-wrap bg-white-500 p-6">
-      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+  <nav id="nav-top-page">
         
-        <div v-if="this.$i18n.locale === 'en'" class="text-sm lg:flex-grow">
+      <div id="header-lang">
+        <nuxt-link
+        v-for="locale in availableLocales"
+        :key="locale.code"
+        :to="switchLocalePath(locale.code)"
+        >{{ locale.name }}</nuxt-link>
+      </div>
+
+      <div>
+        <div v-if="this.$i18n.locale === 'en'">
           <a :alt=" $t('header.linkAlt') " :href=" $t('header.link') ">  
-          <img :alt=" $t('header.logoAlt') " width="25%" src="~/assets/img/canada_header.svg" /> </a>
+            <img class="header-cnd-img" :alt=" $t('header.logoAlt') " width="25%" src="~/assets/img/canada_header.svg" />
+          </a>
         </div>
-        <div v-else class="text-sm lg:flex-grow" >
-            <a :alt=" $t('header.linkAlt') " :href=" $t('header.link') ">
-            <img :alt=" $t('header.logoAlt') " width="25%" src="~/assets/img/canadaFr.svg" /> </a>
-        </div>
-        
-        <div>
-          <h1 class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"></h1>
-          <nuxt-link
-          v-for="locale in availableLocales"
-          :key="locale.code"
-          :to="switchLocalePath(locale.code)"
-          >{{ locale.name }}</nuxt-link>
+        <div v-else>
+          <a :alt=" $t('header.linkAlt') " :href=" $t('header.link') ">
+            <img class="header-cnd-img" :alt=" $t('header.logoAlt') " width="25%" src="~/assets/img/canadaFr.svg" /> 
+          </a>
         </div>
       </div>
     </nav>
@@ -34,5 +35,23 @@ export default {
 </script>
 
 <style>
-
+#nav-top-page{
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto ;
+}
+#header-lang a{
+  float: right;
+}
+.header-cnd-img{
+  height: 40px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  padding-top: 10px;
+  width: auto;
+  
+}
+@media (min-width:  768px) { #nav-top-page { width:  750px; } }
+@media (min-width:  992px) { #nav-top-page { width:  970px; } }
+@media (min-width: 1200px) { #nav-top-page { width: 1170px; } }
 </style>
