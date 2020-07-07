@@ -30,7 +30,7 @@ releases:
     labels:
         category: dts
         app: poc-intake
-        tier: server
+        tier: frontend
     namespace: poc-intake-{{ .Environment.Name }}
     installed: true
     wait: false
