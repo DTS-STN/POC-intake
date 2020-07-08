@@ -1,0 +1,33 @@
+image:
+  repository: mtscontainers.azurecr.io/poc-intake
+{{ if or (eq .Environment.Name "prod-blue") (eq .Environment.Name "prod-green") (eq .Environment.Name "dev") }}
+  tag: "{{ requiredEnv "DOCKER_TAG" }}" 
+{{ else }}
+  tag: latest
+{{ end }}
+  pullPolicy: Always
+extraEnv:
+  - name: VUE_APP_CONNECTION_STRING
+    value: mongodb://dbuser:-password-@poc-intake-db-{{ .Environment.Name }}-mongodb:27017/poc-intake?authSource=poc-intake
+  - name: VUE_APP_POC_INTAKE_DB_PASSWORD
+    value: {{ requiredEnv "VUE_APP_POC_INTAKE_DB_PASSWORD" }}
+  - name: VUE_APP_API_URL
+    value: https://poc-intake.{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN"}}/api/
+
+ingress:
+      enabled: true
+      hosts:
+      {{ if or (eq .Environment.Name "prod-blue") (eq .Environment.Name "prod-green") }}
+        - poc-intake.{{ requiredEnv "BASE_DOMAIN" }}
+      {{ end }}      
+        - poc-intake.{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN" }}
+      annotations: {}
+      # kubernetes.io/ingress.class: traefik
+resources:
+  requests:
+    cpu: 200m
+    memory: 512Mi
+livenessDelay: 60
+readinessDelay: 60
+livenessPath: /en
+readinessPath: /en
