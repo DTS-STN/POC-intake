@@ -16,7 +16,10 @@ pipeline {
                sh 'az login --service-principal -u $JENKINS_SPN -p $JENKINS_SPN_PASS --tenant $AZURE_TENANT_ID'
                sh '''
                     cd ./helmfile
+                    echo "Setting Environment Secrets. This is obfuscated"
+                    set +x                    
                     . ./context-dev.sh > /dev/null
+                    set -x
                     helmfile --environment $TARGET --selector tier=$TIER apply
                 '''
             }
