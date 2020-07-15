@@ -41,7 +41,19 @@ jobs:
         docker tag mtscontainers.azurecr.io/poc-intake:latest mtscontainers.azurecr.io/poc-intake:$BUILD_NUMBER
         docker push mtscontainers.azurecr.io/poc-intake:latest
         docker push mtscontainers.azurecr.io/poc-intake:$BUILD_NUMBER
-    - name: jenkins client server deployment job
-      uses: wei/curl@v1
+    - name: 'Build Jenkins Parameters'
+      run: echo ::set-env name=params::$(echo $concat_params)
+      env: 
+        concat_params: '{ "DOCKER_TAG": "${{ env.BUILD_NUMBER }}", "TIER": "frontend", "TARGET": "dev"}'
+
+    - name: 'Verify Jenkins Parameters'
+      run: echo ${{ env.params }}
+
+    - name: 'Deploy to Staging using Jenkins (migration test)'
+      uses: stigmelling/jenkins-action@v1.1
       with:
-        args: -X POST https://jenkins.dts-stn.com/job/poc-intake/buildWithParameters?docker_tag=$BUILD_NUMBER --user jenkinsbot:${{ secrets.DTS_JENKINS_TOKEN }}
+       jenkinsUrl: 'https://jenkins.dev.dts-stn.com'
+       username: 'dtsrobot'
+       token: '${{ secrets.DTSROBOT_API_TOKEN }}'
+       job: 'deploy_poc_intake'
+       params: '${{ env.params }}'
